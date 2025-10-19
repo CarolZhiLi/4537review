@@ -1308,3 +1308,271 @@ The CSS box model layers are arranged from the center outward: content → paddi
 
 ---
 # Quiz 6: JavaScript misc 
+
+# Quiz 3: Older JavaScript Function Declarations
+
+## Question 1
+**What will the console print?**
+
+```js
+for (let i = 0; i < 5; i++) {
+  for (let j = i; j < i; j++) {
+    console.log(j);
+  }
+}
+```
+
+### Correct Answer
+0, 0 1, 0 1 2, 0 1 2 3
+
+### Explanation
+The inner loop prints all j values smaller than i. Each outer loop iteration starts from 0 up to i-1, producing the nested sequence.
+
+---
+
+## Question 2
+**Which of the following correctly declares a named function?**
+
+- `function greet() {}`
+- `let greet = function() {};`
+- `const greet = () => {};`
+- `greet() => {};`
+
+### Correct Answer
+function greet() {}
+
+### Explanation
+`function greet() {}` is a named function declaration. The others are function expressions or invalid syntax.
+
+---
+
+## Question 3
+**Which function type is hoisted in JavaScript?**
+
+- Function declaration
+- Function expression
+- Arrow function
+- Anonymous callback
+
+### Correct Answer
+Function declaration
+
+### Explanation
+Only function declarations are hoisted — they can be called before they appear in code.
+
+---
+
+## Question 4
+**What will this print?**
+
+```js
+sayHello();
+function sayHello() {
+  console.log("Hi");
+}
+```
+
+### Correct Answer
+Hi
+
+### Explanation
+`sayHello` is a hoisted function declaration, so it’s available before definition.
+
+---
+
+## Question 5
+**What will this print?**
+
+```js
+sayHi();
+const sayHi = function() {
+  console.log("Hi");
+}
+```
+
+### Correct Answer
+Error — Cannot access 'sayHi' before initialization
+
+### Explanation
+Function expressions assigned to `const` are not hoisted the same way as declarations.
+
+---
+
+## Question 6
+**Which statement about function parameters is true?**
+
+- Parameters are local variables inside a function
+- Parameters can be reassigned
+- Parameters shadow outer variables with the same name
+- All of the above
+
+### Correct Answer
+All of the above
+
+### Explanation
+Function parameters behave like local variables — they can be reassigned and can shadow outer scope variables.
+
+---
+
+## Question 7
+**What is the output?**
+
+```js
+function add(a, b = 5) {
+  return a + b;
+}
+console.log(add(3));
+```
+
+### Correct Answer
+8
+
+### Explanation
+If a parameter isn’t passed, the default value (5) is used.
+
+---
+
+## Question 8
+**What does this log?**
+
+```js
+function test() {
+  console.log(a);
+  var a = 10;
+}
+test();
+```
+
+### Correct Answer
+undefined
+
+### Explanation
+`var` is hoisted but not initialized, so `a` exists but is `undefined` until assignment.
+
+---
+
+## Question 9
+**What is the output?**
+
+```js
+function foo() {
+  bar();
+  function bar() {
+    console.log("bar");
+  }
+}
+foo();
+```
+
+### Correct Answer
+bar
+
+### Explanation
+Inner functions are hoisted inside their scope, so `bar` is available within `foo`.
+
+---
+
+## Question 10
+**What is the output?**
+
+```js
+function outer() {
+  let x = 10;
+  function inner() {
+    console.log(x);
+  }
+  return inner;
+}
+let fn = outer();
+fn();
+```
+
+### Correct Answer
+10
+
+### Explanation
+This demonstrates a closure — the inner function retains access to variables from the outer scope.
+
+---
+
+## Question 11
+**Which statement correctly calls a function immediately after defining it?**
+
+- `function run() { console.log("Go"); }()`
+- `(function run() { console.log("Go"); })();`
+- `run = function() { console.log("Go"); }();`
+- `(() => console.log("Go"))`
+
+### Correct Answer
+(function run() { console.log("Go"); })();
+
+### Explanation
+An IIFE (Immediately Invoked Function Expression) is written as `(function() { ... })();`.
+
+---
+
+## Question 12
+**What is the output?**
+
+```js
+function multiply(a, b) {
+  return a * b;
+}
+console.log(typeof multiply);
+```
+
+### Correct Answer
+function
+
+### Explanation
+All declared functions have type "function" in JavaScript.
+
+---
+
+## Question 13
+**Which of the following functions has an implicit return?**
+
+- `function sum(a, b) { return a + b; }`
+- `const sum = (a, b) => a + b;`
+- `const sum = (a, b) => { return a + b; }`
+
+### Correct Answer
+const sum = (a, b) => a + b;
+
+### Explanation
+Arrow functions without `{}` automatically return the evaluated expression.
+
+---
+
+## Question 14
+**What happens here?**
+
+```js
+console.log(square(3));
+function square(n) {
+  return n * n;
+}
+```
+
+### Correct Answer
+9
+
+### Explanation
+`square` is hoisted and works before its declaration.
+
+---
+
+## Question 15
+**Which of these is a function expression, not a declaration?**
+
+- `function greet() {}`
+- `const greet = function() {};`
+- `function sayHello() {}`
+
+### Correct Answer
+const greet = function() {};
+
+### Explanation
+A function expression is assigned to a variable; it’s not hoisted like a declaration.
+
+---
