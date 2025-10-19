@@ -21,11 +21,36 @@ function showQuiz(quizId) {
     button.textContent = quizTitle + ' ▼';
 }
 
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    // Get dropdown elements
-    const dropdownButton = document.getElementById('dropdownButton');
-    const dropdownContent = document.getElementById('dropdownContent');
+function closeHamburgerMenu() {
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const hamburgerNav = document.getElementById('hamburgerNav');
+    hamburgerMenu.classList.remove('active');
+    hamburgerNav.classList.remove('show');
+}
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get dropdown elements
+            const dropdownButton = document.getElementById('dropdownButton');
+            const dropdownContent = document.getElementById('dropdownContent');
+            
+            // Get hamburger menu elements
+            const hamburgerMenu = document.getElementById('hamburgerMenu');
+            const hamburgerNav = document.getElementById('hamburgerNav');
+            
+            // Toggle hamburger menu
+            hamburgerMenu.addEventListener('click', function() {
+                hamburgerMenu.classList.toggle('active');
+                hamburgerNav.classList.toggle('show');
+            });
+            
+            // Close hamburger menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!hamburgerMenu.contains(event.target) && !hamburgerNav.contains(event.target)) {
+                    hamburgerMenu.classList.remove('active');
+                    hamburgerNav.classList.remove('show');
+                }
+            });
     
     // Toggle dropdown when button is clicked
     dropdownButton.addEventListener('click', function(event) {

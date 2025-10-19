@@ -9,7 +9,14 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>📚 JavaScript Quiz Collection</h1>
+            <div class="header-top">
+                <button class="hamburger-menu" id="hamburgerMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <h1>📚 JavaScript Quiz Collection</h1>
+            </div>
             <div class="dropdown-container">
                 <button class="dropdown-button" id="dropdownButton">
                     Select Quiz Section ▼
@@ -19,6 +26,21 @@
                     <a href="#" class="dropdown-item" onclick="showQuiz('quiz7')">Quiz 7: NodeJS, HTTP methods, fs, DB</a>
                     <a href="#" class="dropdown-item" onclick="showQuiz('quiz8')">Quiz 8: Promise Basic</a>
                     <a href="#" class="dropdown-item" onclick="showQuiz('quiz9')">Quiz 9: Web Architecture Pattern</a>
+                </div>
+            </div>
+            
+            <!-- Hamburger Menu Navigation -->
+            <div class="hamburger-nav" id="hamburgerNav">
+                <div class="nav-content">
+                    <h3>📖 Study Materials</h3>
+                    <a href="async-programming.html" class="nav-item">
+                        <span class="nav-icon">⚡</span>
+                        JavaScript Async Programming
+                    </a>
+                    <a href="#" class="nav-item" onclick="closeHamburgerMenu()">
+                        <span class="nav-icon">📚</span>
+                        Back to Quizzes
+                    </a>
                 </div>
             </div>
         </div>
