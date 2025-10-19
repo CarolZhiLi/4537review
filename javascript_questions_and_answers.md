@@ -810,4 +810,319 @@ Only pages with the same origin (same scheme, host, and port) share localStorage
 
 ---
 
+# Quiz 1: HTML & CSS 
+
+## Question 1
+**How would you select all `<div>` tags with a class of `container`?**
+
+- `div.container {}`
+- `.container {}`
+- `div > .container {}`
+- `div + .container {}`
+
+### Correct Answer
+`div.container {}`
+
+### Explanation
+`div.container` matches only `<div>` elements that have class `container`. `.container` matches any element with that class; the child (`>`) and adjacent sibling (`+`) combinators don’t mean “a div with this class”.
+
+---
+
+## Question 2
+**Which of the following sizing declarations is invalid?**
+
+- `width: 50px;`
+- `width: 50%;`
+- `width: 50em;`
+- These are all valid
+
+### Correct Answer
+These are all valid
+
+### Explanation
+`px`, `%`, and `em` are valid CSS units; each declaration is syntactically correct.
+
+---
+
+## Question 3
+**Which of the following needs an opening AND closing tag?**
+
+- `<hr>`
+- `<br>`
+- `<img>`
+- `<table>`
+
+### Correct Answer
+`<table>`
+
+### Explanation
+`<table>` is a non-void element that requires a closing tag. `<hr>`, `<br>`, and `<img>` are void elements.
+
+---
+
+## Question 4
+**Which of the following is a block-level element?**
+
+- `<div></div>`
+- `<span></span>`
+- `<a href="#"></a>`
+- `<button></button>`
+
+### Correct Answer
+`<div></div>`
+
+### Explanation
+`<div>` is block-level by default. `<span>` and `<a>` are inline; `<button>` is typically inline (often rendered inline-block).
+
+---
+
+## Question 5
+**How would you change the background color of a `<div>`?**
+
+- `div { color: green; }`
+- `div { background-color: green; }`
+- `div { backgroundColor: green; }`
+
+### Correct Answer
+`div { background-color: green; }`
+
+### Explanation
+CSS property names use kebab-case (e.g., `background-color`). CamelCase is used in JavaScript style APIs, not in CSS.
+
+---
+
+## Question 6
+**Image tags are assigned a source file using which attribute?**
+
+- `<img source="" />`
+- `<img src="" />`
+- `<image source="" />`
+- `<image src="" />`
+
+### Correct Answer
+`<img src="" />`
+
+### Explanation
+The `<img>` element uses the `src` attribute for the image resource. `<image>` is not a standard HTML element.
+
+---
+
+## Question 7
+**Which of the following is a valid use of quotation marks in HTML?**
+
+- `<a href="#"></a>`
+- `<a href='#'></a>`
+- Both of the above
+- None of the above
+
+### Correct Answer
+Both of the above
+
+### Explanation
+HTML allows either double or single quotes for attribute values as long as they’re balanced and properly escaped when necessary.
+
+---
+
+## Question 8
+**Which is the correct document type declaration?**
+
+- `<document type="html" />`
+- `<document> <html></html> </document>`
+- `<!DOCTYPE html>`
+- `<DOCTYPE="html" />`
+
+### Correct Answer
+`<!DOCTYPE html>`
+
+### Explanation
+The HTML5 doctype triggers standards mode and is written exactly as `<!DOCTYPE html>`.
+
+---
+
+## Question 9
+**Which tag is used to add an external stylesheet to your HTML?**
+
+- `<a></a>`
+- `<link>`
+- `<style></style>`
+- `<external></external>`
+
+### Correct Answer
+`<link>`
+
+### Explanation
+Use `<link rel="stylesheet" href="styles.css">` in the document `<head>` to include external CSS.
+
+---
+
+## Question 10
+**Which of the following is the correct way to group the following selectors?**
+
+- `h1 h2 p { color: red; }`
+- `h1 + h2 + p { color: red; }`
+- `h1, h2, p { color: red; }`
+- `h1 > h2 > p { color: red; }`
+
+### Correct Answer
+`h1, h2, p { color: red; }`
+
+### Explanation
+A comma-separated selector list applies the same declarations to multiple selectors. The others describe relationships (descendant, adjacent sibling, direct child), not grouping.
+
+---
+
+## Question 11
+**Which of the following is the correct use of inline styling?**
+
+- `<h1 color="red">Heading 1</h1>`
+- `<h1 style="color:red;">Heading 1</h1>`
+- `<h1 style="color='red'">Heading 1</h1>`
+
+### Correct Answer
+`<h1 style="color:red;">Heading 1</h1>`
+
+### Explanation
+Inline CSS must be written in the `style` attribute. `color` is not a standalone HTML attribute.
+
+---
+
+## Question 12
+**Colors in HTML/CSS can be used with:**
+
+- `a) <p style="color: rgb(0,0,0);">RGB Values</p>`
+- `b) <p style="color: rgba(0,0,0,0);">RGBA Values</p>`
+- `c) <p style="color: #992345;">Hexadecimal Values</p>`
+- `d) <p style="color: #e6f;">Shorthand Hexadecimal Values</p>`
+- `e) All of the above are valid`
+- `f) Only A and C are valid`
+
+### Correct Answer
+All of the above are valid
+
+### Explanation
+Modern CSS supports `rgb()`, `rgba()`, six-digit hex, and three-digit shorthand hex color notations.
+
+---
+
+## Question 13
+**Given the following HTML, which styling would align the text in the center?**
+
+- `#container { text-align: center; }`
+- `#text { text-align: center; }`
+- Both would work
+- Neither would work
+
+### Correct Answer
+Both would work
+
+### Explanation
+`text-align` controls inline content alignment inside the element. Applying it to the container or the text element itself centers the inline text.
+
+---
+
+## Question 14
+**The tree-like structure of an HTML document is called the ______**
+
+- HTML Tree
+- HTML Document Structure
+- Document Tree Model
+- Document Object Model
+
+### Correct Answer
+Document Object Model
+
+### Explanation
+The DOM represents the document as a tree of nodes that programs can read and manipulate.
+
+---
+
+## Question 15
+**What happens if text is not inside a specific text-related tag (e.g., placed loosely inside the body)?**
+
+```html
+<body>
+TEXT
+</body>
+```
+
+- The browser will display the text anyway
+- The browser will not display the text, but will not throw an error
+- The browser will throw an error and crash
+
+### Correct Answer
+The browser will display the text anyway
+
+### Explanation
+Text nodes are valid children of `<body>`; browsers render them in normal document flow.
+
+---
+
+## Question 16
+**In the following HTML tag, the `alt` and `src` are referred to as _____**
+
+```html
+<img src="" alt="" />
+```
+
+- Elements
+- Attributes
+- Properties
+- Selectors
+
+### Correct Answer
+Attributes
+
+### Explanation
+Attributes provide additional information about elements (e.g., `src`, `alt`, `id`, `class`).
+
+---
+
+## Question 17
+**Which are the two child elements of the `<html>` tag?**
+
+- `<header></header>` and `<footer></footer>`
+- `<head></head>` and `<body></body>`
+- `<header></header>` and `<body></body>`
+- `<head></head>` and `<footer></footer>`
+
+### Correct Answer
+`<head></head>` and `<body></body>`
+
+### Explanation
+The root `<html>` element contains exactly `<head>` and `<body>` as its direct children in standard HTML documents.
+
+---
+
+## Question 18
+**What is the proper way to assign an element with two classes?**
+
+- `<p class="one" class="two">Text</p>`
+- `<p classes="one, two">Text</p>`
+- `<p classes="[one, two]">Text</p>`
+- `<p class="one two">Text</p>`
+
+### Correct Answer
+`<p class="one two">Text</p>`
+
+### Explanation
+Multiple classes are space-separated within a single `class` attribute.
+
+---
+
+## Question 19
+**Which is the correct order of the CSS Box Model (inside to outside)?**
+
+- margin, padding, border, content
+- margin, padding, content, border
+- content, margin, border, padding
+- content, padding, border, margin
+
+### Correct Answer
+content, padding, border, margin
+
+### Explanation
+From the innermost to the outermost boxes: content → padding → border → margin.
+
+---
+
 # Quiz 6: JavaScript misc 
