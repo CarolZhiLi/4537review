@@ -1,4 +1,4 @@
-# Quiz 6: JavaScript misc 
+﻿# Quiz 6: JavaScript misc 
 
 ## Question 1
 **What could become the type of variable `v` after the execution of the JavaScript code snippet below?**
@@ -7,10 +7,10 @@
 let v = sessionStorage.getItem("key");
 ```
 
-### ✅ Correct Answer
+### Correct Answer
 **string or null**
 
-### 💡 Explanation
+### Explanation
 `sessionStorage.getItem("key")` returns:
 - A **string** if the key exists.
 - **null** if the key does not exist.
@@ -22,12 +22,12 @@ It never returns `undefined`.
 ## Question 2
 **What is the correct way to write a JavaScript array?**
 
-### ✅ Correct Answer
+### Correct Answer
 ```js
 let colors = ["red", "green", "blue"];
 ```
 
-### 💡 Explanation
+### Explanation
 Arrays in JavaScript use **square brackets** with elements separated by commas.  
 Other given options are invalid JavaScript syntax.
 
@@ -45,12 +45,12 @@ for (let i = 4; i < 40; ++i) {
 var test = 1;
 ```
 
-### ✅ Correct Answer
+### Correct Answer
 ```
 undefined
 ```
 
-### 💡 Explanation
+### Explanation
 `var` declarations are **hoisted** to the top but initialized as `undefined`.  
 When `console.log(test)` runs, the variable exists but has not yet been assigned `1`.
 
@@ -59,10 +59,10 @@ When `console.log(test)` runs, the variable exists but has not yet been assigned
 ## Question 4
 **Which one of these HTTP methods can be used to send an API request of size 1GB to a server?**
 
-### ✅ Correct Answer
+### Correct Answer
 **POST**
 
-### 💡 Explanation
+### Explanation
 - **GET** appends data to the URL, which has size limits (usually a few KB).
 - **POST** sends data in the **request body**, making it suitable for large payloads.
 
@@ -82,7 +82,7 @@ setTimeout(function () {
 console.log(4);
 ```
 
-### ✅ Correct Answer
+### Correct Answer
 ```
 4
 1
@@ -90,7 +90,7 @@ console.log(4);
 3
 ```
 
-### 💡 Explanation
+### Explanation
 1. `console.log(4)` runs immediately (synchronous).
 2. After 500ms, the first `setTimeout` runs: logs `1`, then schedules `3`.
 3. Logs `2` next.
@@ -101,10 +101,10 @@ console.log(4);
 ## Question 6
 **The external JavaScript file (myJs.js) must contain the `<script>` tag.**
 
-### ✅ Correct Answer
+### Correct Answer
 **False**
 
-### 💡 Explanation
+### Explanation
 External JS files should **not** include `<script>` tags.  
 They contain only JavaScript code and are linked via:
 
@@ -126,13 +126,13 @@ function hiGenerator(name) {
 console.log(hiGenerator("Elan")());
 ```
 
-### ✅ Correct Answer
+### Correct Answer
 ```
 Hi Elan
 undefined
 ```
 
-### 💡 Explanation
+### Explanation
 1. `hiGenerator("Elan")` returns a function that logs `"Hi Elan"`.
 2. That function is immediately executed, logging `"Hi Elan"`.
 3. The function itself returns `undefined`, which is then logged by the outer `console.log()`.
@@ -596,10 +596,10 @@ function fun() {
 
 **Question 8:** Match the architectural pattern with its primary characteristic.
 *   **Answer:**
-    *   Trigger actions asynchronously via events → **Event-Driven Architecture**
-    *   System broken into small, independent services → **Microservice Architecture**
-    *   Enforces separation of concerns (UI, logic, data) → **Layered Architecture**
-    *   All components bundled in a single deployable unit → **Monolithic Architecture**
+    *   Trigger actions asynchronously via events â†’ **Event-Driven Architecture**
+    *   System broken into small, independent services â†’ **Microservice Architecture**
+    *   Enforces separation of concerns (UI, logic, data) â†’ **Layered Architecture**
+    *   All components bundled in a single deployable unit â†’ **Monolithic Architecture**
 
 **Question 9:** Which architecture is most suitable for a large-scale system like Netflix or Amazon that requires high scalability and independent team ownership?
 *   **Answer:** Microservices Architecture.
@@ -631,3 +631,183 @@ function fun() {
 **Question:** What is the primary purpose of the Hexagonal Architecture (Ports & Adapters) pattern?
 *   **Answer:** To decouple core business logic from external systems like databases and UIs.
 *   **Explanation:** The goal of this pattern is to isolate the application's core logic from outside concerns (like the database, UI, or third-party APIs). This makes the core logic independent of technology choices, easier to test, and more maintainable.
+# Quiz 5: Local Storage & JSON 
+
+## Question 1
+**Which is the correct method to access a value 'string' stored in localStorage with the key 'token'?**
+
+- `window.localStorage.getItem('string');`
+- `window.localStorage.getItem('token');`
+- `window.localStorage.get('string');`
+- `window.localStorage.get('token');`
+
+### Correct Answer
+`window.localStorage.getItem('token');`
+
+### Explanation
+Use `localStorage.getItem(key)` to retrieve a value by its key. The key is `'token'`; `getItem` returns the stored string or `null` if missing. There is no `get()` method on `localStorage`.
+
+---
+
+## Question 2
+**Which of the following methods is not a built-in method for parsing and/or converting values to JSON?**
+
+- `JSON.parse()`
+- `JSON.convert()`
+- `JSON.stringify()`
+- `None of the above`
+
+### Correct Answer
+`JSON.convert()`
+
+### Explanation
+The JSON API provides `JSON.parse()` (string -> object) and `JSON.stringify()` (object -> string). `JSON.convert()` does not exist.
+
+---
+
+## Question 3
+**Which is the correct method to clear all data from local storage?**
+
+- `window.localStorage.removeAll();`
+- `window.localStorage.clearAll();`
+- `window.localStorage.clear();`
+- `window.localStorage.remove();`
+
+### Correct Answer
+`window.localStorage.clear();`
+
+### Explanation
+`clear()` removes all keys in the origin's local storage. To remove a single key, use `removeItem(key)`. Methods like `removeAll()`, `clearAll()`, or `remove()` do not exist.
+emoveItem(key). Methods like 
+emoveAll(), clearAll(), or 
+emove() do not exist.
+
+---
+
+## Question 4
+**What is the output of this code?**
+
+```js
+window.localStorage.setItem('value', 'string');
+const str = window.localStorage.getItem('value');
+console.log(str);
+```
+
+- `key`
+- `string`
+- `value`
+- `undefined`
+
+### Correct Answer
+`string`
+
+### Explanation
+`getItem('value')` returns the stored string `'string'`. `getItem` never returns `undefined`; if the key is absent it returns `null`.
+
+---
+
+## Question 5
+**Suppose the file `http://myDomain.com/write.html` writes into localStorage using `localStorage.setItem('something', 'some data')`. Which page(s) could access that content using `localStorage.getItem('something')`?**
+
+- `http://myDomain.com/read.html` and `http://myDomain.com/fetch.html` and `http://myDomain.com/get.html`
+- only `http://myDomain.com/read.html`
+- `http://myDomain.com/read.html` and `https://myDomain.com/read.html`
+
+### Correct Answer
+`http://myDomain.com/read.html` and `http://myDomain.com/fetch.html` and `http://myDomain.com/get.html`
+
+### Explanation
+localStorage is scoped to the origin (scheme + host + port). All three pages share the same origin. Changing the scheme (HTTP vs HTTPS) changes the origin and cannot access the same storage.
+
+---
+
+## Question 6
+**Where can you view Local Storage in Chrome DevTools?**
+
+- Elements tab
+- Memory tab
+- Application tab
+- Sources tab
+
+### Correct Answer
+Application tab
+
+### Explanation
+Open DevTools > Application > Storage > Local Storage to inspect keys and values per origin.
+
+---
+
+## Question 7
+**Storing nested objects in JSON is allowed. This is valid JSON:**
+
+```json
+{"object": {"nestedObject": { "key": "value" }}}
+```
+
+- True
+- False
+
+### Correct Answer
+True
+
+### Explanation
+JSON supports nested objects and arrays. Keys must be double-quoted, and the example follows valid JSON syntax.
+
+---
+
+## Question 8
+**Data stored in localStorage is persistent between different browsers (e.g., data stored in Firefox is accessible in Chrome).**
+
+- True
+- False
+
+### Correct Answer
+False
+
+### Explanation
+localStorage is browser-specific and origin-specific. Data does not sync across different browsers.
+
+---
+
+## Question 9
+**What is the output of the following code?**
+
+```js
+const key = 'key';
+window.localStorage.setItem(key, 'string');
+const value = window.localStorage.getItem(key);
+window.localStorage.removeItem(key);
+window.localStorage.setItem(key, 'newString');
+console.log(value);
+```
+
+- `'string'`
+- `'value'`
+- `'key'`
+- `'newString'`
+
+### Correct Answer
+'string'
+
+### Explanation
+`value` holds the result of the earlier `getItem` call, which is 'string'. Later removing or resetting the key doesn't change the existing variable.
+
+---
+
+## Question 10
+**Suppose an item is stored in the local storage of `https://aaa.com/labs/1/index.html`. Which of the following can access it?**
+
+- A: `https://lab.aaa.com/1/index.html`
+- B: `https://aaa.com/labs/5/hello.html`
+- C: `http://localhost:3000/labs/1/index.html`
+- Both A and B
+
+### Correct Answer
+B: `https://aaa.com/labs/5/hello.html`
+
+### Explanation
+Only pages with the same origin (same scheme, host, and port) share localStorage. Subdomains like `lab.aaa.com` are a different origin; `http://localhost:3000` also differs in both host and scheme.
+
+---
+
+# Quiz 6: JavaScript misc 

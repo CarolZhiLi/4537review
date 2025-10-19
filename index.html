@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,13 +15,14 @@
                     <span></span>
                     <span></span>
                 </button>
-                <h1>📚 JavaScript Quiz Collection</h1>
+                <h1>JavaScript Quiz Collection</h1>
             </div>
             <div class="dropdown-container">
                 <button class="dropdown-button" id="dropdownButton">
-                    Select Quiz Section ▼
+                    Select Quiz Section
                 </button>
                 <div class="dropdown-content" id="dropdownContent">
+                    <a href="#" class="dropdown-item" onclick="showQuiz('quiz5')">Quiz 5: Local Storage & JSON</a>
                     <a href="#" class="dropdown-item" onclick="showQuiz('quiz6')">Quiz 6: JavaScript Misc</a>
                     <a href="#" class="dropdown-item" onclick="showQuiz('quiz7')">Quiz 7: NodeJS, HTTP methods, fs, DB</a>
                     <a href="#" class="dropdown-item" onclick="showQuiz('quiz8')">Quiz 8: Promise Basic</a>
@@ -32,15 +33,415 @@
             <!-- Hamburger Menu Navigation -->
             <div class="hamburger-nav" id="hamburgerNav">
                 <div class="nav-content">
-                    <h3>📖 Study Materials</h3>
+                    <h3>Study Materials</h3>
                     <a href="async-programming.html" class="nav-item">
-                        <span class="nav-icon">⚡</span>
+                        <span class="nav-icon">JS</span>
                         JavaScript Async Programming
                     </a>
                     <a href="#" class="nav-item" onclick="closeHamburgerMenu()">
-                        <span class="nav-icon">📚</span>
+                        <span class="nav-icon">Back</span>
                         Back to Quizzes
                     </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz 5: Local Storage & JSON -->
+        <div id="quiz5_old" class="quiz-section" style="display: none;">
+            <h2 class="quiz-title">Quiz 5: Local Storage & JSON</h2>
+
+            <div class="question">
+                <div class="question-number">Question 1</div>
+                <div class="question-text">Which is the correct method to access a value 'string' stored in localStorage with the key 'token'?</div>
+                <div class="options">
+                    <div class="option">â€¢ <code>window.localStorage.getItem('string');</code></div>
+                    <div class="option">â€¢ <code>window.localStorage.getItem('token');</code></div>
+                    <div class="option">â€¢ <code>window.localStorage.get('string');</code></div>
+                    <div class="option">â€¢ <code>window.localStorage.get('token');</code></div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong><code>window.localStorage.getItem('token');</code></strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>Use <code>localStorage.getItem(key)</code> to retrieve a value by its key. The key is <code>'token'</code>; <code>getItem</code> returns the stored string (or <code>null</code> if it doesnâ€™t exist). There is no <code>get()</code> method on <code>localStorage</code>.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 2</div>
+                <div class="question-text">Which of the following methods is not a built-in method for parsing and/or converting values to JSON?</div>
+                <div class="options">
+                    <div class="option">â€¢ <code>JSON.parse()</code></div>
+                    <div class="option">â€¢ <code>JSON.convert()</code></div>
+                    <div class="option">â€¢ <code>JSON.stringify()</code></div>
+                    <div class="option">â€¢ <code>None of the above</code></div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong><code>JSON.convert()</code></strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>The JSON API provides <code>JSON.parse()</code> (string â†’ object) and <code>JSON.stringify()</code> (object â†’ string). <code>JSON.convert()</code> does not exist.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 3</div>
+                <div class="question-text">Which is the correct method to clear all data from local storage?</div>
+                <div class="options">
+                    <div class="option">â€¢ <code>window.localStorage.removeAll();</code></div>
+                    <div class="option">â€¢ <code>window.localStorage.clearAll();</code></div>
+                    <div class="option">â€¢ <code>window.localStorage.clear();</code></div>
+                    <div class="option">â€¢ <code>window.localStorage.remove();</code></div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong><code>window.localStorage.clear();</code></strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p><code>clear()</code> removes all keys in the originâ€™s local storage. To remove a single key, use <code>removeItem(key)</code>. Methods like <code>removeAll()</code>, <code>clearAll()</code>, or <code>remove()</code> do not exist.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 4</div>
+                <div class="question-text">What is the output of this code?</div>
+                <div class="code-block">window.localStorage.setItem('value', 'string');
+const str = window.localStorage.getItem('value');
+console.log(str);</div>
+                <div class="options">
+                    <div class="option">â€¢ <code>key</code></div>
+                    <div class="option">â€¢ <code>string</code></div>
+                    <div class="option">â€¢ <code>value</code></div>
+                    <div class="option">â€¢ <code>undefined</code></div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong><code>string</code></strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p><code>getItem('value')</code> returns the stored string <code>'string'</code>. <code>getItem</code> never returns <code>undefined</code>; if the key is absent it returns <code>null</code>.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 5</div>
+                <div class="question-text">Suppose the file <code>http://myDomain.com/write.html</code> writes into localStorage using <code>localStorage.setItem('something', 'some data')</code>. Which page(s) could access that content using <code>localStorage.getItem('something')</code>?</div>
+                <div class="options">
+                    <div class="option">â€¢ <code>http://myDomain.com/read.html</code> and <code>http://myDomain.com/fetch.html</code> and <code>http://myDomain.com/get.html</code></div>
+                    <div class="option">â€¢ only <code>http://myDomain.com/read.html</code></div>
+                    <div class="option">â€¢ <code>http://myDomain.com/read.html</code> and <code>https://myDomain.com/read.html</code></div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong><code>http://myDomain.com/read.html</code> and <code>http://myDomain.com/fetch.html</code> and <code>http://myDomain.com/get.html</code></strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>localStorage is scoped to the <strong>origin</strong> (<em>scheme + host + port</em>). All three pages share the same origin. Changing the scheme (HTTP vs HTTPS) changes the origin and cannot access the same storage.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 6</div>
+                <div class="question-text">Where can you view Local Storage in Chrome DevTools?</div>
+                <div class="options">
+                    <div class="option">â€¢ Elements tab</div>
+                    <div class="option">â€¢ Memory tab</div>
+                    <div class="option">â€¢ Application tab</div>
+                    <div class="option">â€¢ Sources tab</div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>Application tab</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>Open DevTools &gt; Application &gt; Storage &gt; Local Storage to inspect keys and values per origin.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 7</div>
+                <div class="question-text">Storing nested objects in JSON is allowed. This is valid JSON:</div>
+                <div class="code-block">{"object": {"nestedObject": { "key": "value" }}}</div>
+                <div class="options">
+                    <div class="option">â€¢ True</div>
+                    <div class="option">â€¢ False</div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>True</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>JSON supports nested objects and arrays. Keys must be double-quoted, and the example follows valid JSON syntax.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 8</div>
+                <div class="question-text">Data stored in localStorage is persistent between different browsers (e.g., data stored in Firefox is accessible in Chrome).</div>
+                <div class="options">
+                    <div class="option">â€¢ True</div>
+                    <div class="option">â€¢ False</div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>False</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>localStorage is <strong>browser-specific</strong> and <strong>origin-specific</strong>. Data does not sync across different browsers.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 9</div>
+                <div class="question-text">What is the output of the following code?</div>
+                <div class="code-block">const key = 'key';
+window.localStorage.setItem(key, 'string');
+const value = window.localStorage.getItem(key);
+window.localStorage.removeItem(key);
+window.localStorage.setItem(key, 'newString');
+console.log(value);</div>
+                <div class="options">
+                    <div class="option">â€¢ <code>'string'</code></div>
+                    <div class="option">â€¢ <code>'value'</code></div>
+                    <div class="option">â€¢ <code>'key'</code></div>
+                    <div class="option">â€¢ <code>'newString'</code></div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong><code>'string'</code></strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p><code>value</code> holds the result of the earlier <code>getItem</code> call, which is <code>'string'</code>. Later removing or resetting the key doesnâ€™t change the existing variable.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 10</div>
+                <div class="question-text">Suppose an item is stored in the local storage of <code>https://aaa.com/labs/1/index.html</code>. Which of the following can access it?</div>
+                <div class="options">
+                    <div class="option">â€¢ A: <code>https://lab.aaa.com/1/index.html</code></div>
+                    <div class="option">â€¢ B: <code>https://aaa.com/labs/5/hello.html</code></div>
+                    <div class="option">â€¢ C: <code>http://localhost:3000/labs/1/index.html</code></div>
+                    <div class="option">â€¢ Both A and B</div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>B: <code>https://aaa.com/labs/5/hello.html</code></strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>Only pages with the <strong>same origin</strong> (same scheme, host, and port) share localStorage. Subdomains like <code>lab.aaa.com</code> are a different origin; <code>http://localhost:3000</code> also differs in both host and scheme.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Quiz 5: Local Storage & JSON (clean) -->
+        <div id="quiz5" class="quiz-section">
+            <h2 class="quiz-title">Quiz 5: Local Storage & JSON</h2>
+
+            <div class="question">
+                <div class="question-number">Question 1</div>
+                <div class="question-text">Which is the correct method to access a value 'string' stored in localStorage with the key 'token'?</div>
+                <div class="options">
+                    <div class="option">â€¢ <code>window.localStorage.getItem('string');</code></div>
+                    <div class="option">â€¢ <code>window.localStorage.getItem('token');</code></div>
+                    <div class="option">â€¢ <code>window.localStorage.get('string');</code></div>
+                    <div class="option">â€¢ <code>window.localStorage.get('token');</code></div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong><code>window.localStorage.getItem('token');</code></strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>Use <code>localStorage.getItem(key)</code> to retrieve a value by its key. The key is <code>'token'</code>; <code>getItem</code> returns the stored string (or <code>null</code> if it doesn't exist). There is no <code>get()</code> method on <code>localStorage</code>.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 2</div>
+                <div class="question-text">Which of the following methods is not a built-in method for parsing and/or converting values to JSON?</div>
+                <div class="options">
+                    <div class="option">â€¢ <code>JSON.parse()</code></div>
+                    <div class="option">â€¢ <code>JSON.convert()</code></div>
+                    <div class="option">â€¢ <code>JSON.stringify()</code></div>
+                    <div class="option">â€¢ <code>None of the above</code></div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong><code>JSON.convert()</code></strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>The JSON API provides <code>JSON.parse()</code> (string -&gt; object) and <code>JSON.stringify()</code> (object -&gt; string). <code>JSON.convert()</code> does not exist.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 3</div>
+                <div class="question-text">Which is the correct method to clear all data from local storage?</div>
+                <div class="options">
+                    <div class="option">â€¢ <code>window.localStorage.removeAll();</code></div>
+                    <div class="option">â€¢ <code>window.localStorage.clearAll();</code></div>
+                    <div class="option">â€¢ <code>window.localStorage.clear();</code></div>
+                    <div class="option">â€¢ <code>window.localStorage.remove();</code></div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong><code>window.localStorage.clear();</code></strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p><code>clear()</code> removes all keys in the originâ€™s local storage. To remove a single key, use <code>removeItem(key)</code>. Methods like <code>removeAll()</code>, <code>clearAll()</code>, or <code>remove()</code> do not exist.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 4</div>
+                <div class="question-text">What is the output of this code?</div>
+                <div class="code-block">window.localStorage.setItem('value', 'string');
+const str = window.localStorage.getItem('value');
+console.log(str);</div>
+                <div class="options">
+                    <div class="option">â€¢ <code>key</code></div>
+                    <div class="option">â€¢ <code>string</code></div>
+                    <div class="option">â€¢ <code>value</code></div>
+                    <div class="option">â€¢ <code>undefined</code></div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong><code>string</code></strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p><code>getItem('value')</code> returns the stored string <code>'string'</code>. <code>getItem</code> never returns <code>undefined</code>; if the key is absent it returns <code>null</code>.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 5</div>
+                <div class="question-text">Suppose the file <code>http://myDomain.com/write.html</code> writes into localStorage using <code>localStorage.setItem('something', 'some data')</code>. Which page(s) could access that content using <code>localStorage.getItem('something')</code>?</div>
+                <div class="options">
+                    <div class="option">â€¢ <code>http://myDomain.com/read.html</code> and <code>http://myDomain.com/fetch.html</code> and <code>http://myDomain.com/get.html</code></div>
+                    <div class="option">â€¢ only <code>http://myDomain.com/read.html</code></div>
+                    <div class="option">â€¢ <code>http://myDomain.com/read.html</code> and <code>https://myDomain.com/read.html</code></div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong><code>http://myDomain.com/read.html</code> and <code>http://myDomain.com/fetch.html</code> and <code>http://myDomain.com/get.html</code></strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>localStorage is scoped to the <strong>origin</strong> (<em>scheme + host + port</em>). All three pages share the same origin. Changing the scheme (HTTP vs HTTPS) changes the origin and cannot access the same storage.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 6</div>
+                <div class="question-text">Where can you view Local Storage in Chrome DevTools?</div>
+                <div class="options">
+                    <div class="option">â€¢ Elements tab</div>
+                    <div class="option">â€¢ Memory tab</div>
+                    <div class="option">â€¢ Application tab</div>
+                    <div class="option">â€¢ Sources tab</div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>Application tab</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>Open DevTools &gt; Application &gt; Storage &gt; Local Storage to inspect keys and values per origin.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 7</div>
+                <div class="question-text">Storing nested objects in JSON is allowed. This is valid JSON:</div>
+                <div class="code-block">{"object": {"nestedObject": { "key": "value" }}}</div>
+                <div class="options">
+                    <div class="option">â€¢ True</div>
+                    <div class="option">â€¢ False</div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>True</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>JSON supports nested objects and arrays. Keys must be double-quoted, and the example follows valid JSON syntax.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 8</div>
+                <div class="question-text">Data stored in localStorage is persistent between different browsers (e.g., data stored in Firefox is accessible in Chrome).</div>
+                <div class="options">
+                    <div class="option">â€¢ True</div>
+                    <div class="option">â€¢ False</div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>False</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>localStorage is <strong>browser-specific</strong> and <strong>origin-specific</strong>. Data does not sync across different browsers.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 9</div>
+                <div class="question-text">What is the output of the following code?</div>
+                <div class="code-block">const key = 'key';
+window.localStorage.setItem(key, 'string');
+const value = window.localStorage.getItem(key);
+window.localStorage.removeItem(key);
+window.localStorage.setItem(key, 'newString');
+console.log(value);</div>
+                <div class="options">
+                    <div class="option">â€¢ <code>'string'</code></div>
+                    <div class="option">â€¢ <code>'value'</code></div>
+                    <div class="option">â€¢ <code>'key'</code></div>
+                    <div class="option">â€¢ <code>'newString'</code></div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong><code>'string'</code></strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p><code>value</code> holds the result of the earlier <code>getItem</code> call, which is <code>'string'</code>. Later removing or resetting the key doesn't change the existing variable.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 10</div>
+                <div class="question-text">Suppose an item is stored in the local storage of <code>https://aaa.com/labs/1/index.html</code>. Which of the following can access it?</div>
+                <div class="options">
+                    <div class="option">â€¢ A: <code>https://lab.aaa.com/1/index.html</code></div>
+                    <div class="option">â€¢ B: <code>https://aaa.com/labs/5/hello.html</code></div>
+                    <div class="option">â€¢ C: <code>http://localhost:3000/labs/1/index.html</code></div>
+                    <div class="option">â€¢ Both A and B</div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>B: <code>https://aaa.com/labs/5/hello.html</code></strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>Only pages with the <strong>same origin</strong> (same scheme, host, and port) share localStorage. Subdomains like <code>lab.aaa.com</code> are a different origin; <code>http://localhost:3000</code> also differs in both host and scheme.</p>
                 </div>
             </div>
         </div>
@@ -213,9 +614,9 @@ undefined</div>
                 <div class="question-number">Question 9</div>
                 <div class="question-text">An API request made by which one of these HTTP methods can be bookmarked?</div>
                 <div class="options">
-                    <div class="option">• GET</div>
-                    <div class="option">• POST</div>
-                    <div class="option">• POST and GET</div>
+                    <div class="option">â€¢ GET</div>
+                    <div class="option">â€¢ POST</div>
+                    <div class="option">â€¢ POST and GET</div>
                 </div>
                 <div class="answer">
                     <div class="answer-title">✅ Correct Answer</div>
@@ -348,10 +749,10 @@ function foo() {
                 <div class="question-number">Question 15</div>
                 <div class="question-text">What is the correct JavaScript syntax to change the content of the HTML element <code>&lt;p id="demo"&gt;This is a demonstration.&lt;/p&gt;</code>?</div>
                 <div class="options">
-                    <div class="option">• <code>#demo.innerHTML = "Hello World!";</code></div>
-                    <div class="option">• <code>document.getElementsByName("p").innerHTML = "Hello World!";</code></div>
-                    <div class="option">• <code>document.getElement("p").innerHTML = "Hello World!";</code></div>
-                    <div class="option">• <code>document.getElementById("demo").innerHTML = "Hello World!";</code></div>
+                    <div class="option">â€¢ <code>#demo.innerHTML = "Hello World!";</code></div>
+                    <div class="option">â€¢ <code>document.getElementsByName("p").innerHTML = "Hello World!";</code></div>
+                    <div class="option">â€¢ <code>document.getElement("p").innerHTML = "Hello World!";</code></div>
+                    <div class="option">â€¢ <code>document.getElementById("demo").innerHTML = "Hello World!";</code></div>
                 </div>
                 <div class="answer">
                     <div class="answer-title">✅ Correct Answer</div>
@@ -372,10 +773,10 @@ function foo() {
                 <div class="question-number">Question 1</div>
                 <div class="question-text">Which one of these modules is not a built-in module in Node.js?</div>
                 <div class="options">
-                    <div class="option">• http</div>
-                    <div class="option">• url</div>
-                    <div class="option">• <span class="highlight">mysql</span></div>
-                    <div class="option">• fs</div>
+                    <div class="option">â€¢ http</div>
+                    <div class="option">â€¢ url</div>
+                    <div class="option">â€¢ <span class="highlight">mysql</span></div>
+                    <div class="option">â€¢ fs</div>
                 </div>
                 <div class="answer">
                     <div class="answer-title">✅ Correct Answer</div>
@@ -391,10 +792,10 @@ function foo() {
                 <div class="question-number">Question 2</div>
                 <div class="question-text">Which one of these modules is used in Node.js for handling the file system?</div>
                 <div class="options">
-                    <div class="option">• os</div>
-                    <div class="option">• path</div>
-                    <div class="option">• file</div>
-                    <div class="option">• <span class="highlight">fs</span></div>
+                    <div class="option">â€¢ os</div>
+                    <div class="option">â€¢ path</div>
+                    <div class="option">â€¢ file</div>
+                    <div class="option">â€¢ <span class="highlight">fs</span></div>
                 </div>
                 <div class="answer">
                     <div class="answer-title">✅ Correct Answer</div>
@@ -424,10 +825,10 @@ http.createServer(function (req, res) {
                 <div class="question-number">Question 4</div>
                 <div class="question-text">Given <code>const address = "http://localhost:8000/admin.html?user=123";</code> and <code>const parsed = url.parse(address, true);</code>, what line of code will print out <code>/admin.html</code>?</div>
                 <div class="options">
-                    <div class="option">• <code>console.log(parsed.path)</code></div>
-                    <div class="option">• <code>console.log(parsed.pathname)</code></div>
-                    <div class="option">• <code>console.log(parsed.search)</code></div>
-                    <div class="option">• <code>host</code></div>
+                    <div class="option">â€¢ <code>console.log(parsed.path)</code></div>
+                    <div class="option">â€¢ <code>console.log(parsed.pathname)</code></div>
+                    <div class="option">â€¢ <code>console.log(parsed.search)</code></div>
+                    <div class="option">â€¢ <code>host</code></div>
                 </div>
                 <div class="answer">
                     <div class="answer-title">✅ Correct Answer</div>
@@ -469,8 +870,8 @@ http.createServer(function (req, res) {
                 <div class="question-number">Question 7</div>
                 <div class="question-text">Which of the following statements is false?</div>
                 <div class="options">
-                    <div class="option">• There are no size limits in data for both GET and POST.</div>
-                    <div class="option">• GET is used for requesting data and POST is for sending data from the server.</div>
+                    <div class="option">â€¢ There are no size limits in data for both GET and POST.</div>
+                    <div class="option">â€¢ GET is used for requesting data and POST is for sending data from the server.</div>
                 </div>
                 <div class="answer">
                     <div class="answer-title">✅ Correct Answer</div>
@@ -618,10 +1019,10 @@ console.log(5);</div>
                 <div class="question-number">Question 4</div>
                 <div class="question-text">Which choice about Promise is incorrect?</div>
                 <div class="options">
-                    <div class="option">• A Promise is an object representing the eventual completion or failure of an asynchronous operation.</div>
-                    <div class="option">• Essentially, a Promise is a returned object to which you attach callbacks, instead of passing callbacks into a function.</div>
-                    <div class="option">• <span class="highlight">A pending promise can not be fulfilled with a value or rejected with a reason (error).</span></div>
-                    <div class="option">• A Promise is always in one of the three states: I. pending, II. fulfilled, III. rejected.</div>
+                    <div class="option">â€¢ A Promise is an object representing the eventual completion or failure of an asynchronous operation.</div>
+                    <div class="option">â€¢ Essentially, a Promise is a returned object to which you attach callbacks, instead of passing callbacks into a function.</div>
+                    <div class="option">â€¢ <span class="highlight">A pending promise can not be fulfilled with a value or rejected with a reason (error).</span></div>
+                    <div class="option">â€¢ A Promise is always in one of the three states: I. pending, II. fulfilled, III. rejected.</div>
                 </div>
                 <div class="answer">
                     <div class="answer-title">✅ Correct Answer</div>
@@ -891,10 +1292,10 @@ Promise.race(timers).then((res) =&gt; {
                 <div class="answer">
                     <div class="answer-title">✅ Correct Answer</div>
                     <ul>
-                        <li>Trigger actions asynchronously via events → <strong>Event-Driven Architecture</strong></li>
-                        <li>System broken into small, independent services → <strong>Microservice Architecture</strong></li>
-                        <li>Enforces separation of concerns (UI, logic, data) → <strong>Layered Architecture</strong></li>
-                        <li>All components bundled in a single deployable unit → <strong>Monolithic Architecture</strong></li>
+                        <li>Trigger actions asynchronously via events â†’ <strong>Event-Driven Architecture</strong></li>
+                        <li>System broken into small, independent services â†’ <strong>Microservice Architecture</strong></li>
+                        <li>Enforces separation of concerns (UI, logic, data) â†’ <strong>Layered Architecture</strong></li>
+                        <li>All components bundled in a single deployable unit â†’ <strong>Monolithic Architecture</strong></li>
                     </ul>
                 </div>
             </div>
@@ -988,3 +1389,7 @@ Promise.race(timers).then((res) =&gt; {
     <script src="script.js"></script>
 </body>
 </html>
+
+
+
+

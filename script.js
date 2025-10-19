@@ -1,4 +1,4 @@
-function showQuiz(quizId) {
+﻿function showQuiz(quizId) {
     // Hide all quiz sections
     const allQuizzes = document.querySelectorAll('.quiz-section');
     allQuizzes.forEach(quiz => {
@@ -18,7 +18,7 @@ function showQuiz(quizId) {
     // Update dropdown button text
     const button = document.querySelector('.dropdown-button');
     const quizTitle = selectedQuiz.querySelector('.quiz-title').textContent;
-    button.textContent = quizTitle + ' ▼';
+    button.textContent = quizTitle;
 }
 
 function closeHamburgerMenu() {
@@ -84,3 +84,6 @@ function closeHamburgerMenu() {
     // Show first quiz by default
     showQuiz('quiz6');
 });
+
+
+
