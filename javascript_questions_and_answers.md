@@ -1125,4 +1125,186 @@ From the innermost to the outermost boxes: content → padding → border → ma
 
 ---
 
+
+# Quiz 4: Review Basic JS Objects Hosting 
+
+## Question 1
+**How would you select all <div> tags with a class of container?**
+
+- div.container {}
+- .container {}
+- div > .container {}
+- div + .container {}
+
+### Correct Answer
+div.container {}
+
+### Explanation
+div.container matches only <div> elements that have the class container. .container matches any element with that class, while > and + target child or adjacent sibling elements, not specifically <div>s.
+
+---
+
+## Question 2
+**Which of the following sizing declarations is invalid?**
+
+- width: 50px;
+- width: 50%;
+- width: 50em;
+- These are all valid
+
+### Correct Answer
+These are all valid
+
+### Explanation
+All three — px, %, and em — are valid CSS units. There is no invalid syntax here.
+
+---
+
+## Question 3
+**Which of the following needs both an opening and closing tag?**
+
+- <hr>
+- <br>
+- <img>
+- <table>
+
+### Correct Answer
+<table>
+
+### Explanation
+<table> is a container element and must have a closing tag. Tags like <hr>, <br>, and <img> are void (self-closing) elements.
+
+---
+
+## Question 4
+**Which tag is used to add an external stylesheet to your HTML?**
+
+- <a></a>
+- <link>
+- <style></style>
+- <external></external>
+
+### Correct Answer
+<link>
+
+### Explanation
+Use <link rel="stylesheet" href="style.css"> in the <head> section to attach an external CSS file.
+
+---
+
+## Question 5
+**What is the correct way to group these selectors together?**
+
+- h1 h2 p { color: red; }
+- h1 + h2 + p { color: red; }
+- h1, h2, p { color: red; }
+- h1 > h2 > p { color: red; }
+
+### Correct Answer
+h1, h2, p { color: red; }
+
+### Explanation
+Commas group multiple selectors so they share the same style rule. Other combinators (space, +, >) describe relationships instead.
+
+---
+
+## Question 6
+**Which of the following is the correct use of inline styling?**
+
+- <h1 color="red">Heading</h1>
+- <h1 style="color:red;">Heading</h1>
+- <h1 style="color='red'">Heading</h1>
+
+### Correct Answer
+<h1 style="color:red;">Heading</h1>
+
+### Explanation
+Inline styles must use the style attribute and valid CSS syntax: property, colon, value.
+
+---
+
+## Question 7
+**Colors in HTML can be defined using which of the following?**
+
+- a) RGB values
+- b) RGBA values
+- c) Hexadecimal values
+- d) Shorthand hexadecimal
+- e) All of the above
+
+### Correct Answer
+All of the above
+
+### Explanation
+All listed color formats — gb(), gba(), #rrggbb, and #rgb — are valid ways to define colors in CSS.
+
+---
+
+## Question 8
+**Which styling would center the text in the <p> tag below?**
+
+`html
+<div id="container"><p id="text">Centered Text</p></div>
+`
+
+- #container { text-align: center; }
+- #text { text-align: center; }
+- Both would work
+- Neither would work
+
+### Correct Answer
+Both would work
+
+### Explanation
+Text can be centered either by applying 	ext-align: center to the paragraph or to its parent container.
+
+---
+
+## Question 9
+**The tree-like structure of an HTML document is called the ______.**
+
+- HTML Tree
+- HTML Document Structure
+- Document Tree Model
+- Document Object Model
+
+### Correct Answer
+Document Object Model
+
+### Explanation
+HTML is parsed into a DOM — a tree of objects representing the document structure that JavaScript can manipulate.
+
+---
+
+## Question 10
+**Which is the proper way to assign multiple classes to a single element?**
+
+- <p class="one" class="two">Text</p>
+- <p classes="one, two">Text</p>
+- <p class="one two">Text</p>
+- <p class="[one, two]">Text</p>
+
+### Correct Answer
+<p class="one two">Text</p>
+
+### Explanation
+Multiple classes are separated by spaces in a single class attribute.
+
+---
+
+## Question 11
+**Which is the correct order of the CSS box model (inside → outside)?**
+
+- margin, padding, border, content
+- margin, padding, content, border
+- content, padding, border, margin
+- content, margin, border, padding
+
+### Correct Answer
+content, padding, border, margin
+
+### Explanation
+The CSS box model layers are arranged from the center outward: content → padding → border → margin.
+
+---
 # Quiz 6: JavaScript misc 
