@@ -74,216 +74,236 @@
         
         <div class="quiz-page">
             <h1 class="quiz-title">Quiz 4: Review Basic JS Objects Hosting</h1>
-            
+
             <div class="question">
-                <div class="question-number">Question 1</div>
-                <div class="question-text">How would you select all &lt;div&gt; tags with a class of "container"?</div>
+                <div class="question-number">Question 1 (1 point)</div>
+                <div class="question-text">How would you invoke the <code>startCar</code> method from outside the <code>car</code> object?</div>
+                <div class="code-block">let car = {
+  doors: 4,
+  year: 2019,
+  startCar: function() {
+    console.log('Car started');
+  }
+};</div>
                 <div class="options">
-                    <div class="option"><code>div.container {}</code></div>
-                    <div class="option"><code>.container {}</code></div>
-                    <div class="option"><code>div &gt; .container {}</code></div>
-                    <div class="option"><code>div + .container {}</code></div>
+                    <div class="option">• <strong>A)</strong> <code>car.startCar();</code></div>
+                    <div class="option">• <strong>B)</strong> <code>startCar();</code></div>
+                    <div class="option">• <strong>C)</strong> <code>startCar(car);</code></div>
+                    <div class="option">• <strong>D)</strong> <code>startCar = car();</code></div>
+                    <div class="option">• <strong>E)</strong> This method is out of scope</div>
                 </div>
                 <div class="answer">
                     <div class="answer-title">✅ Correct Answer</div>
-                    <strong><code>div.container {}</code></strong>
+                    <strong><code>car.startCar();</code></strong>
                 </div>
                 <div class="explanation">
                     <div class="explanation-title">💡 Explanation</div>
-                    <p><code>div.container</code> matches only &lt;div&gt; elements that have the class <code>container</code>. <code>.container</code> matches any element with that class, while <code>&gt;</code> and <code>+</code> target child or adjacent sibling elements, not specifically &lt;div&gt;s.</p>
+                    <p>Object methods are invoked with dot notation. <code>car.startCar();</code> correctly calls the method defined on the <code>car</code> object; the other options either reference undefined identifiers or have invalid syntax.</p>
                 </div>
             </div>
 
             <div class="question">
                 <div class="question-number">Question 2</div>
-                <div class="question-text">Which of the following sizing declarations is invalid?</div>
+                <div class="question-text">Which of the following will <strong>not</strong> point to the number 5?</div>
+                <div class="code-block">let obj = {
+  firstNum: 26,
+  moreNums: {
+    highNum: 1204,
+    lowNum: 14,
+    evenMoreNums: {
+      five: 5
+    }
+  }
+};</div>
                 <div class="options">
-                    <div class="option"><code>width: 50px;</code></div>
-                    <div class="option"><code>width: 50%;</code></div>
-                    <div class="option"><code>width: 50em;</code></div>
-                    <div class="option">These are all valid</div>
+                    <div class="option">• <strong>A)</strong> <code>obj["moreNums"]["evenMoreNums"]["five"];</code></div>
+                    <div class="option">• <strong>B)</strong> <code>obj.moreNums.evenMoreNums.five;</code></div>
+                    <div class="option">• <strong>C)</strong> <code>obj["moreNums"].evenMoreNums["five"];</code></div>
+                    <div class="option">• <strong>D)</strong> <code>obj.[moreNums].evenMoreNums.[five];</code></div>
+                    <div class="option">• <strong>E)</strong> All of the above will work</div>
                 </div>
                 <div class="answer">
                     <div class="answer-title">✅ Correct Answer</div>
-                    <strong>These are all valid</strong>
+                    <strong><code>obj.[moreNums].evenMoreNums.[five];</code></strong>
                 </div>
                 <div class="explanation">
                     <div class="explanation-title">💡 Explanation</div>
-                    <p>All three — <code>px</code>, <code>%</code>, and <code>em</code> — are valid CSS units. There is no invalid syntax here.</p>
+                    <p>Bracket notation requires a string or variable inside the brackets. Writing <code>obj.[moreNums]</code> is invalid syntax, so this expression fails; the other references correctly navigate to the nested value of <code>5</code>.</p>
                 </div>
             </div>
 
             <div class="question">
                 <div class="question-number">Question 3</div>
-                <div class="question-text">Which of the following needs both an opening and closing tag?</div>
-                <div class="options">
-                    <div class="option"><code>&lt;hr&gt;</code></div>
-                    <div class="option"><code>&lt;br&gt;</code></div>
-                    <div class="option"><code>&lt;img&gt;</code></div>
-                    <div class="option"><code>&lt;table&gt;</code></div>
-                </div>
+                <div class="question-text">Which is the correct way to create a DOM button element in memory?</div>
                 <div class="answer">
                     <div class="answer-title">✅ Correct Answer</div>
-                    <strong><code>&lt;table&gt;</code></strong>
+                    <strong><code>let btn = document.createElement("button");</code></strong>
                 </div>
                 <div class="explanation">
                     <div class="explanation-title">💡 Explanation</div>
-                    <p><code>&lt;table&gt;</code> is a container element and must have a closing tag. Tags like <code>&lt;hr&gt;</code>, <code>&lt;br&gt;</code>, and <code>&lt;img&gt;</code> are void (self-closing) elements.</p>
+                    <p><code>document.createElement()</code> constructs a new DOM node that you can later append to the document with methods such as <code>appendChild()</code>.</p>
                 </div>
             </div>
 
             <div class="question">
                 <div class="question-number">Question 4</div>
-                <div class="question-text">Which tag is used to add an external stylesheet to your HTML?</div>
-                <div class="options">
-                    <div class="option"><code>&lt;a&gt;&lt;/a&gt;</code></div>
-                    <div class="option"><code>&lt;link&gt;</code></div>
-                    <div class="option"><code>&lt;style&gt;&lt;/style&gt;</code></div>
-                    <div class="option"><code>&lt;external&gt;&lt;/external&gt;</code></div>
-                </div>
+                <div class="question-text">Using the following constructor, how would you instantiate a person named Elon Musk?</div>
+                <div class="code-block">function Person(firstname, lastname) {
+  this.firstname = firstname;
+  this.lastname = lastname;
+}</div>
                 <div class="answer">
                     <div class="answer-title">✅ Correct Answer</div>
-                    <strong><code>&lt;link&gt;</code></strong>
+                    <strong><code>let elon = new Person("Elon", "Musk");</code></strong>
                 </div>
                 <div class="explanation">
                     <div class="explanation-title">💡 Explanation</div>
-                    <p>Use <code>&lt;link rel="stylesheet" href="style.css"&gt;</code> in the <code>&lt;head&gt;</code> section to attach an external CSS file.</p>
+                    <p>Constructor functions are invoked with the <code>new</code> keyword to create an object instance. Passing <code>"Elon"</code> and <code>"Musk"</code> assigns those values to the new person's properties.</p>
                 </div>
             </div>
 
             <div class="question">
                 <div class="question-number">Question 5</div>
-                <div class="question-text">What is the correct way to group these selectors together?</div>
+                <div class="question-text">What will the console print?</div>
+                <div class="code-block">let obj = { a: 1, b: 2, c: 3 };
+console.log(obj["1"]);</div>
                 <div class="options">
-                    <div class="option"><code>h1 h2 p { color: red; }</code></div>
-                    <div class="option"><code>h1 + h2 + p { color: red; }</code></div>
-                    <div class="option"><code>h1, h2, p { color: red; }</code></div>
-                    <div class="option"><code>h1 &gt; h2 &gt; p { color: red; }</code></div>
+                    <div class="option">• <strong>A)</strong> <code>1</code></div>
+                    <div class="option">• <strong>B)</strong> <code>"a"</code></div>
+                    <div class="option">• <strong>C)</strong> <code>undefined</code></div>
+                    <div class="option">• <strong>D)</strong> Uncaught ReferenceError</div>
                 </div>
                 <div class="answer">
                     <div class="answer-title">✅ Correct Answer</div>
-                    <strong><code>h1, h2, p { color: red; }</code></strong>
+                    <strong><code>undefined</code></strong>
                 </div>
                 <div class="explanation">
                     <div class="explanation-title">💡 Explanation</div>
-                    <p>Commas group multiple selectors so they share the same rule. Other combinators (space, <code>+</code>, <code>&gt;</code>) describe relationships instead of grouping.</p>
+                    <p>The object keys are <code>"a"</code>, <code>"b"</code>, and <code>"c"</code>. Looking up <code>obj["1"]</code> queries a key named <code>"1"</code>, which is absent, so JavaScript returns <code>undefined</code>.</p>
                 </div>
             </div>
 
             <div class="question">
                 <div class="question-number">Question 6</div>
-                <div class="question-text">Which of the following is the correct use of inline styling?</div>
+                <div class="question-text">In the following example, <code>sandwich</code> is an example of a(n) ______.</div>
+                <div class="code-block">let sandwich = { meat: "chicken", bread: "white" };</div>
                 <div class="options">
-                    <div class="option"><code>&lt;h1 color="red"&gt;Heading&lt;/h1&gt;</code></div>
-                    <div class="option"><code>&lt;h1 style="color:red;"&gt;Heading&lt;/h1&gt;</code></div>
-                    <div class="option"><code>&lt;h1 style="color='red'"&gt;Heading&lt;/h1&gt;</code></div>
+                    <div class="option">• Document Object Model</div>
+                    <div class="option">• Object Method</div>
+                    <div class="option">• Object Literal</div>
+                    <div class="option">• Object Constructor</div>
                 </div>
                 <div class="answer">
                     <div class="answer-title">✅ Correct Answer</div>
-                    <strong><code>&lt;h1 style="color:red;"&gt;Heading&lt;/h1&gt;</code></strong>
+                    <strong>Object Literal</strong>
                 </div>
                 <div class="explanation">
                     <div class="explanation-title">💡 Explanation</div>
-                    <p>Inline styles must use the <code>style</code> attribute and valid CSS: property, colon, value.</p>
+                    <p>An object literal is defined with curly braces and key–value pairs. The <code>sandwich</code> variable is created directly via literal syntax.</p>
                 </div>
             </div>
 
             <div class="question">
                 <div class="question-number">Question 7</div>
-                <div class="question-text">Colors in HTML can be defined using which of the following?</div>
+                <div class="question-text">Which option describes the requirements you need to consider when choosing a hosting service for your assignments?</div>
                 <div class="options">
-                    <div class="option">a) RGB values</div>
-                    <div class="option">b) RGBA values</div>
-                    <div class="option">c) Hexadecimal values</div>
-                    <div class="option">d) Shorthand hexadecimal</div>
-                    <div class="option">e) All of the above</div>
+                    <div class="option">• <strong>A)</strong> Host multiple Node.js apps at the same time</div>
+                    <div class="option">• <strong>B)</strong> Provide SSL and deliver pages in under 15 seconds</div>
+                    <div class="option">• <strong>C)</strong> Support MySQL or another SQL database</div>
+                    <div class="option">• <strong>D)</strong> Keep multiple web apps running for the entire semester</div>
+                    <div class="option">• <strong>E)</strong> Offer terminal access for installing Node.js modules</div>
+                    <div class="option">• <strong>F)</strong> Provide DB admin access to manage user permissions</div>
+                    <div class="option">• <strong>G)</strong> All options</div>
                 </div>
                 <div class="answer">
                     <div class="answer-title">✅ Correct Answer</div>
-                    <strong>All of the above</strong>
+                    <strong>All options</strong>
                 </div>
                 <div class="explanation">
                     <div class="explanation-title">💡 Explanation</div>
-                    <p>All listed formats — <code>rgb()</code>, <code>rgba()</code>, <code>#rrggbb</code>, and <code>#rgb</code> — are supported by CSS.</p>
+                    <p>Each requirement impacts your ability to deploy coursework: hosting multiple apps, ensuring SSL and performance, using SQL databases, maintaining uptime, installing dependencies, and managing database permissions.</p>
                 </div>
             </div>
 
             <div class="question">
                 <div class="question-number">Question 8</div>
-                <div class="question-text">Which styling would center the text in the &lt;p&gt; tag below?<br/>&lt;div id="container"&gt;&lt;p id="text"&gt;Centered Text&lt;/p&gt;&lt;/div&gt;</div>
-                <div class="options">
-                    <div class="option"><code>#container { text-align: center; }</code></div>
-                    <div class="option"><code>#text { text-align: center; }</code></div>
-                    <div class="option">Both would work</div>
-                    <div class="option">Neither would work</div>
-                </div>
-                <div class="answer">
-                    <div class="answer-title">✅ Correct Answer</div>
-                    <strong>Both would work</strong>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">💡 Explanation</div>
-                    <p>Center text by applying <code>text-align: center</code> either to the paragraph itself or to its parent container.</p>
-                </div>
-            </div>
+                <div class="question-text">What will the console print?</div>
+                <div class="code-block">function isAboveFive(num) {
+  if (num > 5) {
+    return true;
+  }
+  console.log(num + " is less than or equal to 5");
+}
 
-            <div class="question">
-                <div class="question-number">Question 9</div>
-                <div class="question-text">The tree-like structure of an HTML document is called the ______.</div>
+console.log(isAboveFive(10));</div>
                 <div class="options">
-                    <div class="option">HTML Tree</div>
-                    <div class="option">HTML Document Structure</div>
-                    <div class="option">Document Tree Model</div>
-                    <div class="option">Document Object Model</div>
+                    <div class="option">• <strong>A)</strong> <code>10</code></div>
+                    <div class="option">• <strong>B)</strong> <code>true</code></div>
+                    <div class="option">• <strong>C)</strong> <code>true</code>, <em>10 is less than or equal to 5</em></div>
+                    <div class="option">• <strong>D)</strong> <code>10 is less than or equal to 5</code></div>
                 </div>
                 <div class="answer">
                     <div class="answer-title">✅ Correct Answer</div>
-                    <strong>Document Object Model</strong>
+                    <strong><code>true</code></strong>
                 </div>
                 <div class="explanation">
                     <div class="explanation-title">💡 Explanation</div>
-                    <p>HTML is parsed into the DOM — a tree of objects representing the document that JavaScript can manipulate.</p>
+                    <p>Since <code>10 &gt; 5</code>, the function returns <code>true</code> and exits before the <code>console.log</code> statement runs. The outer log prints the returned value.</p>
                 </div>
             </div>
 
             <div class="question">
                 <div class="question-number">Question 10</div>
-                <div class="question-text">Which is the proper way to assign multiple classes to a single element?</div>
+                <div class="question-text">Which of the following will print David's GPA?</div>
+                <div class="code-block">function Student(name, major, gpa) {
+  this.name = name;
+  this.major = major;
+  this.gpa = gpa;
+}
+
+let arr = [
+  new Student("Emma", "Comp Sci", 3.9),
+  new Student("David", "Mathematics", 4.0)
+];</div>
                 <div class="options">
-                    <div class="option"><code>&lt;p class="one" class="two"&gt;Text&lt;/p&gt;</code></div>
-                    <div class="option"><code>&lt;p classes="one, two"&gt;Text&lt;/p&gt;</code></div>
-                    <div class="option"><code>&lt;p class="one two"&gt;Text&lt;/p&gt;</code></div>
-                    <div class="option"><code>&lt;p class="[one, two]"&gt;Text&lt;/p&gt;</code></div>
+                    <div class="option">• <strong>A)</strong> <code>console.log(arr[1]["gpa"]);</code></div>
+                    <div class="option">• <strong>B)</strong> <code>console.log(arr[1].gpa);</code></div>
+                    <div class="option">• <strong>C)</strong> <code>console.log(arr[1][gpa]);</code></div>
+                    <div class="option">• <strong>D)</strong> All of the above</div>
+                    <div class="option">• <strong>E)</strong> Only A and B will work</div>
                 </div>
                 <div class="answer">
                     <div class="answer-title">✅ Correct Answer</div>
-                    <strong><code>&lt;p class="one two"&gt;Text&lt;/p&gt;</code></strong>
+                    <strong>Only A and B will work</strong>
                 </div>
                 <div class="explanation">
                     <div class="explanation-title">💡 Explanation</div>
-                    <p>Multiple classes are space-separated within a single <code>class</code> attribute.</p>
+                    <p><code>arr[1]</code> is David's student object, so both dot and bracket notation can access the <code>gpa</code> property. The expression <code>arr[1][gpa]</code> fails because <code>gpa</code> is treated as an undefined variable.</p>
                 </div>
             </div>
 
             <div class="question">
                 <div class="question-number">Question 11</div>
-                <div class="question-text">Which is the correct order of the CSS box model (inside → outside)?</div>
+                <div class="question-text">What will the console print?</div>
+                <div class="code-block">let arr = [1, 2, 3];
+console.log(typeof arr);</div>
                 <div class="options">
-                    <div class="option">margin, padding, border, content</div>
-                    <div class="option">margin, padding, content, border</div>
-                    <div class="option">content, padding, border, margin</div>
-                    <div class="option">content, margin, border, padding</div>
+                    <div class="option">• <strong>A)</strong> <code>"object"</code></div>
+                    <div class="option">• <strong>B)</strong> <code>"array"</code></div>
+                    <div class="option">• <strong>C)</strong> <code>"number"</code></div>
+                    <div class="option">• <strong>D)</strong> <code>"undefined"</code></div>
                 </div>
                 <div class="answer">
                     <div class="answer-title">✅ Correct Answer</div>
-                    <strong>content, padding, border, margin</strong>
+                    <strong><code>"object"</code></strong>
                 </div>
                 <div class="explanation">
                     <div class="explanation-title">💡 Explanation</div>
-                    <p>The CSS box model layers are arranged from the center outward: content → padding → border → margin.</p>
+                    <p><code>typeof</code> reports arrays as <code>"object"</code> because arrays are specialized objects in JavaScript. Use <code>Array.isArray()</code> to differentiate them from other objects.</p>
                 </div>
             </div>
         </div>
     </div>
+    <script src="toggle-answers.js" defer></script>
 </body>
 </html>

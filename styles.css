@@ -429,6 +429,46 @@ body {
     margin-bottom: 10px;
 }
 
+.check-answer {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.25);
+    text-decoration: none;
+}
+
+.check-answer:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.35);
+}
+
+.check-answer:focus-visible {
+    outline: 3px solid rgba(102, 126, 234, 0.6);
+    outline-offset: 2px;
+}
+
+.check-all {
+    display: block;
+    margin: 10px auto 30px;
+}
+
+.js-enabled .answer,
+.js-enabled .explanation {
+    display: none;
+}
+
+.js-enabled .answer.visible,
+.js-enabled .explanation.visible {
+    display: block;
+}
+
 .options {
     background: #ecf0f1;
     padding: 15px;
