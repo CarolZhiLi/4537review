@@ -7,9 +7,28 @@ function closeHamburgerMenu() {
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function () {
+    // Get dropdown elements
+    const dropdownButton = document.getElementById('dropdownButton');
+    const dropdownContent = document.getElementById('dropdownContent');
+
     // Get hamburger menu elements
     const hamburgerMenu = document.getElementById('hamburgerMenu');
     const hamburgerNav = document.getElementById('hamburgerNav');
+
+    // Toggle dropdown menu
+    if (dropdownButton && dropdownContent) {
+        dropdownButton.addEventListener('click', function (event) {
+            event.stopPropagation();
+            dropdownContent.classList.toggle('show');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function (event) {
+            if (!dropdownButton.contains(event.target) && !dropdownContent.contains(event.target)) {
+                dropdownContent.classList.remove('show');
+            }
+        });
+    }
 
     // Toggle hamburger menu
     if (hamburgerMenu && hamburgerNav) {
