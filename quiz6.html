@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz 6: JavaScript Misc - JavaScript Quiz Collection</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .quiz-page {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .quiz-title {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            margin-bottom: 30px;
+        }
+        
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .back-button::before {
+            content: "← ";
+            margin-right: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .quiz-page {
+                padding: 20px;
+            }
+            
+            .quiz-title {
+                font-size: 2em;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .quiz-page {
+                padding: 15px;
+            }
+            
+            .quiz-title {
+                font-size: 1.6em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">Back to Quiz Collection</a>
+        
+        <div class="quiz-page">
+            <h1 class="quiz-title">Quiz 6: JavaScript Misc</h1>
+            
+            <div class="question">
+                <div class="question-number">Question 1</div>
+                <div class="question-text">What could become the type of variable <code>v</code> after the execution of the JavaScript code snippet below?</div>
+                <div class="code-block">let v = sessionStorage.getItem("key");</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>string or null</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p><code>sessionStorage.getItem("key")</code> returns:</p>
+                    <ul>
+                        <li>A <strong>string</strong> if the key exists.</li>
+                        <li><strong>null</strong> if the key does not exist.</li>
+                    </ul>
+                    <p>It never returns <code>undefined</code>.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 2</div>
+                <div class="question-text">What is the correct way to write a JavaScript array?</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <div class="code-block">let colors = ["red", "green", "blue"];</div>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>Arrays in JavaScript use <strong>square brackets</strong> with elements separated by commas.</p>
+                    <p>Other given options are invalid JavaScript syntax.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 3</div>
+                <div class="question-text">What will the console log?</div>
+                <div class="code-block">console.log(test);
+let s = 1;
+for (let i = 4; i &lt; 40; ++i) {
+    s = s * 2 + i;
+}
+var test = 1;</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <div class="code-block">undefined</div>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p><code>var</code> declarations are <strong>hoisted</strong> to the top but initialized as <code>undefined</code>.</p>
+                    <p>When <code>console.log(test)</code> runs, the variable exists but has not yet been assigned <code>1</code>.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 4</div>
+                <div class="question-text">Which one of these HTTP methods can be used to send an API request of size 1GB to a server?</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>POST</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <ul>
+                        <li><strong>GET</strong> appends data to the URL, which has size limits (usually a few KB).</li>
+                        <li><strong>POST</strong> sends data in the <strong>request body</strong>, making it suitable for large payloads.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 5</div>
+                <div class="question-text">What will the console log?</div>
+                <div class="code-block">setTimeout(function () {
+    console.log(1);
+    setTimeout(function () {
+        console.log(3);
+    }, 0);
+    console.log(2);
+}, 500);
+console.log(4);</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <div class="code-block">4
+1
+2
+3</div>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <ol>
+                        <li><code>console.log(4)</code> runs immediately (synchronous).</li>
+                        <li>After 500ms, the first <code>setTimeout</code> runs: logs <code>1</code>, then schedules <code>3</code>.</li>
+                        <li>Logs <code>2</code> next.</li>
+                        <li>Finally, the inner <code>setTimeout</code> (0ms) logs <code>3</code>.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 6</div>
+                <div class="question-text">The external JavaScript file (myJs.js) must contain the <code>&lt;script&gt;</code> tag.</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>False</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>External JS files should <strong>not</strong> include <code>&lt;script&gt;</code> tags.</p>
+                    <p>They contain only JavaScript code and are linked via:</p>
+                    <div class="code-block">&lt;script src="myJs.js"&gt;&lt;/script&gt;</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 7</div>
+                <div class="question-text">What will be logged on the console?</div>
+                <div class="code-block">function hiGenerator(name) {
+  return function () {
+    console.log("Hi " + name);
+  };
+}
+console.log(hiGenerator("Elan")());</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <div class="code-block">Hi Elan
+undefined</div>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <ol>
+                        <li><code>hiGenerator("Elan")</code> returns a function that logs <code>"Hi Elan"</code>.</li>
+                        <li>That function is immediately executed, logging <code>"Hi Elan"</code>.</li>
+                        <li>The function itself returns <code>undefined</code>, which is then logged by the outer <code>console.log()</code>.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 8</div>
+                <div class="question-text">What would be the value of the variable <code>counter</code> after the user has pressed the button five times?</div>
+                <div class="code-block">&lt;input id="inputid" type="button" value="click"&gt;
+&lt;script&gt;
+    let counter = 1;
+    function foo() {
+        counter++;
+        console.log(counter);
+    }
+    document.getElementById('inputid').onclick = foo();
+    console.log(counter);
+&lt;/script&gt;</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>The final value of <code>counter</code> will be 2.</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>The line <code>document.getElementById('inputid').onclick = foo();</code> contains a common mistake. The parentheses <code>()</code> after <code>foo</code> cause the function to be <strong>executed immediately</strong> when the script loads, not when the button is clicked. This increments <code>counter</code> from 1 to 2. The <em>return value</em> of <code>foo</code> (which is <code>undefined</code>) is then assigned to the <code>onclick</code> event handler. Because the handler is <code>undefined</code>, clicking the button does nothing. The value of <code>counter</code> remains 2, no matter how many times the button is pressed.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 9</div>
+                <div class="question-text">An API request made by which one of these HTTP methods can be bookmarked?</div>
+                <div class="options">
+                    <div class="option">• GET</div>
+                    <div class="option">• POST</div>
+                    <div class="option">• POST and GET</div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>GET</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>GET requests include all necessary data in the URL's query parameters. Since a bookmark is just a saved URL, GET requests can be bookmarked and re-executed perfectly. POST requests send data in the request body, which is not part of the URL and cannot be bookmarked.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 10</div>
+                <div class="question-text">What is the output of the code snippet below?</div>
+                <div class="code-block">&lt;script&gt;
+    if (10 &gt; 9) {
+        let a = 999;
+        a++;
+    }
+    console.log(a);
+&lt;/script&gt;</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>It will throw a ReferenceError.</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>The <code>let</code> keyword creates a <strong>block-scoped</strong> variable. This means the variable <code>a</code> only exists within the curly braces <code>{}</code> of the <code>if</code> statement. The <code>console.log(a)</code> statement is outside of that block, so when it tries to access <code>a</code>, it cannot find it in its scope, resulting in a <code>ReferenceError: a is not defined</code>.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 11</div>
+                <div class="question-text">What will the console log?</div>
+                <div class="code-block">setTimeout(function () {
+    let a = 2;
+    console.log(1);
+    setTimeout(function () {
+        console.log(2);
+    }, 18849);
+    console.log(3);
+}, 18850);
+
+if (a === 2) {
+    console.log(4);
+}
+
+for (let i = 0; i &lt; 100000; i++) {}</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>uncaught ReferenceError: a is not defined</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p><code>setTimeout</code> is asynchronous. The JavaScript engine schedules the function to run later and immediately executes the next synchronous code, which is the <code>if (a === 2)</code> block. The variable <code>a</code> is declared with <code>let</code> <em>inside</em> the <code>setTimeout</code> callback, so it is not in scope where the <code>if</code> statement is. The script tries to access a non-existent variable and crashes with a <code>ReferenceError</code> before any timers can complete.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 12</div>
+                <div class="question-text">What will the console log?</div>
+                <div class="code-block">function foo(n) {
+    var s = 0;
+    for (let i = 0; i &lt; n; i++) {
+        s += i;
+    }
+}
+
+console.log(foo(3));</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>undefined</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>The function <code>foo(3)</code> correctly calculates that the sum <code>s</code> is 3 (0 + 1 + 2). However, the function <code>foo</code> is missing a <code>return</code> statement. In JavaScript, a function that does not explicitly return a value implicitly returns <code>undefined</code>. Therefore, <code>console.log</code> prints <code>undefined</code>.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 13</div>
+                <div class="question-text">What will the following code return?</div>
+                <div class="code-block">if (m = []) {
+    console.log("Green");
+} else {
+    console.log("BLue");
+}
+var m = 10;</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>Green</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <ol>
+                        <li><strong>Hoisting:</strong> The declaration <code>var m;</code> is hoisted to the top of the scope, so <code>m</code> is <code>undefined</code> when the <code>if</code> statement is evaluated.</li>
+                        <li><strong>Assignment:</strong> The condition <code>(m = [])</code> is an <strong>assignment</strong>, not a comparison. It assigns an empty array <code>[]</code> to <code>m</code>.</li>
+                        <li><strong>Truthiness:</strong> The value of an assignment expression is the value that was assigned. Therefore, the <code>if</code> statement becomes <code>if ([])</code>. In JavaScript, an empty array is an object, and all objects are "truthy".</li>
+                        <li>Since the condition is true, the first block is executed, logging "Green".</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 14</div>
+                <div class="question-text">What will be logged on the console?</div>
+                <div class="code-block">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;script&gt;
+function foo() {
+    const a = 0;
+    console.log(a);
+    ++a;
+}
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>Nothing will be logged on the console.</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>The function <code>foo()</code> is <strong>defined</strong>, but it is never <strong>called</strong> or invoked anywhere in the script. Since the function is never executed, the code inside it, including <code>console.log(a)</code>, never runs.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 15</div>
+                <div class="question-text">What is the correct JavaScript syntax to change the content of the HTML element <code>&lt;p id="demo"&gt;This is a demonstration.&lt;/p&gt;</code>?</div>
+                <div class="options">
+                    <div class="option">• <code>#demo.innerHTML = "Hello World!";</code></div>
+                    <div class="option">• <code>document.getElementsByName("p").innerHTML = "Hello World!";</code></div>
+                    <div class="option">• <code>document.getElement("p").innerHTML = "Hello World!";</code></div>
+                    <div class="option">• <code>document.getElementById("demo").innerHTML = "Hello World!";</code></div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong><code>document.getElementById("demo").innerHTML = "Hello World!";</code></strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>This is the standard method for selecting a unique element by its <code>id</code> and then using the <code>.innerHTML</code> property to change its content. The other options use incorrect syntax or non-existent methods.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

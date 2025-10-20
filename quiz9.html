@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz 9: Web Architecture Pattern - JavaScript Quiz Collection</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .quiz-page {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .quiz-title {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            margin-bottom: 30px;
+        }
+        
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .back-button::before {
+            content: "← ";
+            margin-right: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .quiz-page {
+                padding: 20px;
+            }
+            
+            .quiz-title {
+                font-size: 2em;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .quiz-page {
+                padding: 15px;
+            }
+            
+            .quiz-title {
+                font-size: 1.6em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">Back to Quiz Collection</a>
+        
+        <div class="quiz-page">
+            <h1 class="quiz-title">Quiz 9: Web Architecture Pattern</h1>
+            
+            <div class="question">
+                <div class="question-number">Question 1</div>
+                <div class="question-text">In the context of web application architecture, what is the primary focus?</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>Reliability, scalability, security, ease of implementation, and modularity.</strong>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 2</div>
+                <div class="question-text">Which of the following is a direct benefit of studying architectural patterns?</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>Helps evaluate efficiency, robustness, security, and maintenance costs.</strong>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 3</div>
+                <div class="question-text">A monolithic architecture is typically simple to build and deploy but can become hard to scale and maintain as complexity grows.</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>True</strong>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 4</div>
+                <div class="question-text">In a Microservice Architecture, how do services typically communicate with each other?</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>Via API calls</strong>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 5</div>
+                <div class="question-text">Large companies like Netflix or Discord often use a single, unchanging architectural pattern throughout their existence.</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>False</strong>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 6</div>
+                <div class="question-text">In a Microservice Architecture, if one service fails (e.g., the user profile service), what is a likely consequence for other services?</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>Other services can potentially continue operating if they don't depend on the failed one.</strong>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 7</div>
+                <div class="question-text">In the API-centric architecture, what is the common format for data payloads in API responses?</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>JSON</strong>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 8</div>
+                <div class="question-text">Match the architectural pattern with its primary characteristic.</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <ul>
+                        <li>Trigger actions asynchronously via events → <strong>Event-Driven Architecture</strong></li>
+                        <li>System broken into small, independent services → <strong>Microservice Architecture</strong></li>
+                        <li>Enforces separation of concerns (UI, logic, data) → <strong>Layered Architecture</strong></li>
+                        <li>All components bundled in a single deployable unit → <strong>Monolithic Architecture</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 9</div>
+                <div class="question-text">Which architecture is most suitable for a large-scale system like Netflix or Amazon that requires high scalability and independent team ownership?</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>Microservices Architecture</strong>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 10</div>
+                <div class="question-text">Select the advantages of a Microservice Architecture.</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <ul>
+                        <li>Enables adding new components without shutting down the entire system.</li>
+                        <li>Allows different teams to work on different services.</li>
+                        <li>Improves scalability and flexibility.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 11</div>
+                <div class="question-text">Place the following architectural patterns in the order that a growing tech startup would typically adopt them, from earliest to latest.</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <ol>
+                        <li>Monolithic</li>
+                        <li>Layered</li>
+                        <li>Microservices</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 12</div>
+                <div class="question-text">In a Layered (n-Tier) Architecture, what is the primary purpose of separating the data access layer from the business logic layer?</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>To ensure regulatory compliance, testability, and maintainability.</strong>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 13</div>
+                <div class="question-text">The Model-View-Controller (MVC) pattern is best for web frameworks when...</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>the core business logic must be completely decoupled from all external systems.</strong>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 14</div>
+                <div class="question-text">What is a key development benefit of an API-centric, service-based architecture?</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>It enables a new service to be written in a different technology stack (e.g., Node.js) and hooked up to an existing app (e.g., Django).</strong>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 15</div>
+                <div class="question-text">In a monolithic architecture, adding a new feature often requires recompiling and redeploying the entire application.</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>True</strong>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 16</div>
+                <div class="question-text">What is the primary purpose of the Hexagonal Architecture (Ports & Adapters) pattern?</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>To decouple core business logic from external systems like databases and UIs.</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>The goal of this pattern is to isolate the application's core logic from outside concerns (like the database, UI, or third-party APIs). This makes the core logic independent of technology choices, easier to test, and more maintainable.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz 7: NodeJS, HTTP methods, fs, DB - JavaScript Quiz Collection</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .quiz-page {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .quiz-title {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            margin-bottom: 30px;
+        }
+        
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .back-button::before {
+            content: "← ";
+            margin-right: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .quiz-page {
+                padding: 20px;
+            }
+            
+            .quiz-title {
+                font-size: 2em;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .quiz-page {
+                padding: 15px;
+            }
+            
+            .quiz-title {
+                font-size: 1.6em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">Back to Quiz Collection</a>
+        
+        <div class="quiz-page">
+            <h1 class="quiz-title">Quiz 7: NodeJS, HTTP methods, fs, DB</h1>
+            
+            <div class="question">
+                <div class="question-number">Question 1</div>
+                <div class="question-text">Which one of these modules is not a built-in module in Node.js?</div>
+                <div class="options">
+                    <div class="option">• http</div>
+                    <div class="option">• url</div>
+                    <div class="option">• <span class="highlight">mysql</span></div>
+                    <div class="option">• fs</div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>mysql</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>It's a third-party package that must be installed.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 2</div>
+                <div class="question-text">Which one of these modules is used in Node.js for handling the file system?</div>
+                <div class="options">
+                    <div class="option">• os</div>
+                    <div class="option">• path</div>
+                    <div class="option">• file</div>
+                    <div class="option">• <span class="highlight">fs</span></div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>fs (File System)</strong>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 3</div>
+                <div class="question-text">Which block of code will send the client 'You are connected!' when they connect to <code>http://localhost:8000</code>?</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <div class="code-block">const http = require('http');
+http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write('You are connected!');
+    res.end();
+}).listen(8000);</div>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>This is the correct syntax. It uses the <strong>response (<code>res</code>)</strong> object to write the header and body, uses the correct status code (<code>200</code>), and listens on the correct port (<code>8000</code>). Other options incorrectly use the request (<code>req</code>) object, provide the port as the status code, or fail to specify a port in <code>.listen()</code>.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 4</div>
+                <div class="question-text">Given <code>const address = "http://localhost:8000/admin.html?user=123";</code> and <code>const parsed = url.parse(address, true);</code>, what line of code will print out <code>/admin.html</code>?</div>
+                <div class="options">
+                    <div class="option">• <code>console.log(parsed.path)</code></div>
+                    <div class="option">• <code>console.log(parsed.pathname)</code></div>
+                    <div class="option">• <code>console.log(parsed.search)</code></div>
+                    <div class="option">• <code>host</code></div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong><code>console.log(parsed.pathname)</code></strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>The <code>pathname</code> property contains only the path portion of the URL, without the query string.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 5</div>
+                <div class="question-text">Using a GET request to send over user credentials (username and password) to the server is considered safe and ok.</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>False</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>This is highly insecure because credentials appear in the URL, browser history, and server logs. Sensitive data should be sent in the body of a POST request over HTTPS.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 6</div>
+                <div class="question-text">After creating a user profile, you want to edit your information. Which HTTP request is appropriate for this task?</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>PUT</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p><code>PUT</code> is the standard HTTP method for updating an existing resource.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 7</div>
+                <div class="question-text">Which of the following statements is false?</div>
+                <div class="options">
+                    <div class="option">• There are no size limits in data for both GET and POST.</div>
+                    <div class="option">• GET is used for requesting data and POST is for sending data from the server.</div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>Both statements listed are false.</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>GET requests have a URL length limit (around 2000 characters). POST requests are for sending data <strong>from the client to the server</strong>, not the other way around.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 8</div>
+                <div class="question-text">In order to retrieve information about the database, having the following code on the <em>client-side</em> is sufficient and is considered good practice.</div>
+                <div class="code-block">const mysql = require('mysql');
+const con = mysql.createConnection({
+    host: "localhost",
+    user: "yourusername",
+    password: "yourpassword"
+});
+// ...</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>False</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>This is extremely dangerous. Placing database credentials on the client-side would expose them to anyone viewing the page source. Database connections must always be handled on the server-side.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 9</div>
+                <div class="question-text">Which block of code will successfully delete the file 'file.txt'?</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <div class="code-block">fs.unlink('file.txt', (err) => {
+  if (err) throw err;
+  console.log('file.txt was deleted');
+});</div>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>The correct function in Node.js's native <code>fs</code> module for deleting a file is <code>fs.unlink()</code>. Other function names like <code>remove</code> or <code>delete</code> do not exist in the core module.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 10</div>
+                <div class="question-text">Given a project with <code>index.js</code> in the root and <code>math.js</code> inside a <code>modules</code> folder, what statements can be used to import <code>math.js</code> into <code>index.js</code>?</div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <p>Both <code>const math = require('./modules/math.js')</code> and <code>const math = require('./modules/math')</code> are correct.</p>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>The <code>./</code> indicates a relative path. Node.js's <code>require</code> function can resolve the module with or without the <code>.js</code> extension.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
