@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz 1: HTML & CSS - JavaScript Quiz Collection</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .quiz-page {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .quiz-title {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            margin-bottom: 30px;
+        }
+        
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .back-button::before {
+            content: "← ";
+            margin-right: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .quiz-page {
+                padding: 20px;
+            }
+            
+            .quiz-title {
+                font-size: 2em;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .quiz-page {
+                padding: 15px;
+            }
+            
+            .quiz-title {
+                font-size: 1.6em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">Back to Quiz Collection</a>
+        
+        <div class="quiz-page">
+            <h1 class="quiz-title">Quiz 1: HTML & CSS</h1>
+            
+            <div class="question">
+                <div class="question-number">Question 1</div>
+                <div class="question-text">How would you select all &lt;div&gt; tags with a class of "container"?</div>
+                <div class="options">
+                    <div class="option"><code>div.container {}</code></div>
+                    <div class="option"><code>.container {}</code></div>
+                    <div class="option"><code>div &gt; .container {}</code></div>
+                    <div class="option"><code>div + .container {}</code></div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong><code>div.container {}</code></strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p><code>div.container</code> matches only &lt;div&gt; elements with class <code>container</code>. <code>.container</code> matches any element with that class; the child (<code>&gt;</code>) and adjacent sibling (<code>+</code>) combinators do not express "divs that have this class".</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 2</div>
+                <div class="question-text">Which of the following sizing declarations is invalid?</div>
+                <div class="options">
+                    <div class="option"><code>width: 50px;</code></div>
+                    <div class="option"><code>width: 50%;</code></div>
+                    <div class="option"><code>width: 50em;</code></div>
+                    <div class="option">These are all valid</div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>These are all valid</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p><code>px</code>, <code>%</code>, and <code>em</code> are all valid CSS units. The declarations are syntactically correct.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 3</div>
+                <div class="question-text">Which of the following needs an opening AND closing tag?</div>
+                <div class="options">
+                    <div class="option"><code>&lt;hr&gt;</code></div>
+                    <div class="option"><code>&lt;br&gt;</code></div>
+                    <div class="option"><code>&lt;img&gt;</code></div>
+                    <div class="option"><code>&lt;table&gt;</code></div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong><code>&lt;table&gt;</code></strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p><code>&lt;table&gt;</code> is non-void and must be closed. <code>&lt;hr&gt;</code>, <code>&lt;br&gt;</code>, and <code>&lt;img&gt;</code> are void elements and do not have closing tags.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 4</div>
+                <div class="question-text">Which of the following is a block-level element?</div>
+                <div class="options">
+                    <div class="option"><code>&lt;div&gt;&lt;/div&gt;</code></div>
+                    <div class="option"><code>&lt;span&gt;&lt;/span&gt;</code></div>
+                    <div class="option"><code>&lt;a href="#"&gt;&lt;/a&gt;</code></div>
+                    <div class="option"><code>&lt;button&gt;&lt;/button&gt;</code></div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong><code>&lt;div&gt;&lt;/div&gt;</code></strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p><code>&lt;div&gt;</code> is block-level by default. <code>&lt;span&gt;</code> and <code>&lt;a&gt;</code> are inline; <code>&lt;button&gt;</code> is typically inline/inline-block by default in user-agent styles.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 5</div>
+                <div class="question-text">How would you change the background color of a &lt;div&gt;?</div>
+                <div class="options">
+                    <div class="option"><code>div { color: green; }</code></div>
+                    <div class="option"><code>div { background-color: green; }</code></div>
+                    <div class="option"><code>div { backgroundColor: green; }</code></div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong><code>div { background-color: green; }</code></strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>In CSS, property names are kebab-case like <code>background-color</code>. The camelCase form is used in JavaScript DOM style APIs, not in CSS.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 6</div>
+                <div class="question-text">Image tags are assigned a source file using which attribute?</div>
+                <div class="options">
+                    <div class="option"><code>&lt;img source="" /&gt;</code></div>
+                    <div class="option"><code>&lt;img src="" /&gt;</code></div>
+                    <div class="option"><code>&lt;image source="" /&gt;</code></div>
+                    <div class="option"><code>&lt;image src="" /&gt;</code></div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong><code>&lt;img src="" /&gt;</code></strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>The <code>&lt;img&gt;</code> element uses the <code>src</code> attribute to specify the image resource. There is no <code>&lt;image&gt;</code> element in HTML.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 7</div>
+                <div class="question-text">Which of the following is a valid use of quotation marks in HTML?</div>
+                <div class="options">
+                    <div class="option"><code>&lt;a href="#"&gt;&lt;/a&gt;</code></div>
+                    <div class="option"><code>&lt;a href='#'&gt;&lt;/a&gt;</code></div>
+                    <div class="option">Both of the above</div>
+                    <div class="option">None of the above</div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>Both of the above</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>HTML allows either double or single quotes for attribute values, as long as they are properly balanced and escaped when needed.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 8</div>
+                <div class="question-text">Which is the correct document type declaration?</div>
+                <div class="options">
+                    <div class="option"><code>&lt;document type="html" /&gt;</code></div>
+                    <div class="option"><code>&lt;document&gt; &lt;html&gt;&lt;/html&gt; &lt;/document&gt;</code></div>
+                    <div class="option"><code>&lt;!DOCTYPE html&gt;</code></div>
+                    <div class="option"><code>&lt;DOCTYPE="html" /&gt;</code></div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong><code>&lt;!DOCTYPE html&gt;</code></strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>The HTML5 doctype is a short declaration that triggers standards mode in browsers.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 9</div>
+                <div class="question-text">Which tag is used to add an external stylesheet to your HTML?</div>
+                <div class="options">
+                    <div class="option"><code>&lt;a&gt;&lt;/a&gt;</code></div>
+                    <div class="option"><code>&lt;link&gt;</code></div>
+                    <div class="option"><code>&lt;style&gt;&lt;/style&gt;</code></div>
+                    <div class="option"><code>&lt;external&gt;&lt;/external&gt;</code></div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong><code>&lt;link&gt;</code></strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>Use <code>&lt;link rel="stylesheet" href="styles.css"&gt;</code> in the &lt;head&gt; to attach an external CSS file.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 10</div>
+                <div class="question-text">Which of the following is the correct way to group the following selectors?</div>
+                <div class="options">
+                    <div class="option"><code>h1 h2 p { color: red; }</code></div>
+                    <div class="option"><code>h1 + h2 + p { color: red; }</code></div>
+                    <div class="option"><code>h1, h2, p { color: red; }</code></div>
+                    <div class="option"><code>h1 &gt; h2 &gt; p { color: red; }</code></div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong><code>h1, h2, p { color: red; }</code></strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>A comma-separated list applies the same declarations to multiple selectors. The other selectors represent relationships (descendant, adjacent sibling, direct child) and are not grouping.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 11</div>
+                <div class="question-text">Which of the following is the correct use of inline styling?</div>
+                <div class="options">
+                    <div class="option"><code>&lt;h1 color="red"&gt;Heading 1&lt;/h1&gt;</code></div>
+                    <div class="option"><code>&lt;h1 style="color:red;"&gt;Heading 1&lt;/h1&gt;</code></div>
+                    <div class="option"><code>&lt;h1 style="color='red'"&gt;Heading 1&lt;/h1&gt;</code></div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong><code>&lt;h1 style="color:red;"&gt;Heading 1&lt;/h1&gt;</code></strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>Inline CSS must be placed in the <code>style</code> attribute. The <code>color</code> attribute does not exist; mixing single quotes inside double-quoted attribute values must still form valid CSS.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 12</div>
+                <div class="question-text">Colors in HTML/CSS can be used with which of the following?</div>
+                <div class="options">
+                    <div class="option"><code>&lt;p style="color: rgb(0,0,0);"&gt;RGB Values&lt;/p&gt;</code></div>
+                    <div class="option"><code>&lt;p style="color: rgba(0,0,0,0);"&gt;RGBA Values&lt;/p&gt;</code></div>
+                    <div class="option"><code>&lt;p style="color: #992345;"&gt;Hexadecimal Values&lt;/p&gt;</code></div>
+                    <div class="option"><code>&lt;p style="color: #e6f;"&gt;Shorthand Hexadecimal Values&lt;/p&gt;</code></div>
+                    <div class="option">All of the above are valid</div>
+                    <div class="option">Only A and C are valid</div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>All of the above are valid</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>Modern CSS supports <code>rgb()</code>, <code>rgba()</code>, 6-digit hex, and 3-digit shorthand hex color notations.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 13</div>
+                <div class="question-text">Given the following HTML, which styling would align the text in the center?</div>
+                <div class="options">
+                    <div class="option"><code>#container { text-align: center; }</code></div>
+                    <div class="option"><code>#text { text-align: center; }</code></div>
+                    <div class="option">Both would work</div>
+                    <div class="option">Neither would work</div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>Both would work</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p><code>text-align</code> controls inline content alignment within the element. Applying it to the container or the text element itself centers the text content.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 14</div>
+                <div class="question-text">The tree-like structure of an HTML document is called the ______.</div>
+                <div class="options">
+                    <div class="option">HTML Tree</div>
+                    <div class="option">HTML Document Structure</div>
+                    <div class="option">Document Tree Model</div>
+                    <div class="option">Document Object Model</div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>Document Object Model</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>The DOM is a programming interface that represents the document as a tree of nodes.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 15</div>
+                <div class="question-text">What happens if text is not inside a specific text-related tag and is placed directly inside &lt;body&gt;?</div>
+                <div class="options">
+                    <div class="option">The browser will display the text anyway</div>
+                    <div class="option">The browser will not display the text, but will not throw an error</div>
+                    <div class="option">The browser will throw an error and crash</div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>The browser will display the text anyway</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>Text nodes are valid in the body's flow. Browsers render them according to the document flow even without a wrapping text tag.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 16</div>
+                <div class="question-text">In the following HTML tag, the "alt" and "src" are referred to as _____</div>
+                <div class="code-block">&lt;img src="" alt="" /&gt;</div>
+                <div class="options">
+                    <div class="option">Elements</div>
+                    <div class="option">Attributes</div>
+                    <div class="option">Properties</div>
+                    <div class="option">Selectors</div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>Attributes</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>Attributes modify elements by providing additional information such as sources, alt text, IDs, classes, etc.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 17</div>
+                <div class="question-text">Which are the two child elements of the &lt;html&gt; tag?</div>
+                <div class="options">
+                    <div class="option"><code>&lt;header&gt;&lt;/header&gt;</code> and <code>&lt;footer&gt;&lt;/footer&gt;</code></div>
+                    <div class="option"><code>&lt;head&gt;&lt;/head&gt;</code> and <code>&lt;body&gt;&lt;/body&gt;</code></div>
+                    <div class="option"><code>&lt;header&gt;&lt;/header&gt;</code> and <code>&lt;body&gt;&lt;/body&gt;</code></div>
+                    <div class="option"><code>&lt;head&gt;&lt;/head&gt;</code> and <code>&lt;footer&gt;&lt;/footer&gt;</code></div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong><code>&lt;head&gt;</code> and <code>&lt;body&gt;</code></strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>The root <code>&lt;html&gt;</code> contains exactly two direct children in standard documents: <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code>.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 18</div>
+                <div class="question-text">What is the proper way to assign an element with two classes?</div>
+                <div class="options">
+                    <div class="option"><code>&lt;p class="one" class="two"&gt;Text&lt;/p&gt;</code></div>
+                    <div class="option"><code>&lt;p classes="one, two"&gt;Text&lt;/p&gt;</code></div>
+                    <div class="option"><code>&lt;p classes="[one, two]"&gt;Text&lt;/p&gt;</code></div>
+                    <div class="option"><code>&lt;p class="one two"&gt;Text&lt;/p&gt;</code></div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong><code>&lt;p class="one two"&gt;Text&lt;/p&gt;</code></strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>Multiple classes are space-separated within a single <code>class</code> attribute.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Question 20</div>
+                <div class="question-text">Which is the correct order of the CSS Box Model (inside to outside)?</div>
+                <div class="options">
+                    <div class="option">margin, padding, border, content</div>
+                    <div class="option">margin, padding, content, border</div>
+                    <div class="option">content, margin, border, padding</div>
+                    <div class="option">content, padding, border, margin</div>
+                </div>
+                <div class="answer">
+                    <div class="answer-title">✅ Correct Answer</div>
+                    <strong>content, padding, border, margin</strong>
+                </div>
+                <div class="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <p>The box model flows outward from the content box to padding, then border, then margin.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
